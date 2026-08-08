@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { legacyPages } from "./site-links";
 import { newsPosts } from "./news-posts";
 import { JournalCovers } from "./journal-covers";
 
@@ -29,7 +28,6 @@ const copy = {
     archive: "Complete news archive",
     archiveIntro: "Every story preserved from the original StevaniLab website.",
     archiveOpen: "Browse all stories",
-    legacy: "Legacy pages & resources",
   },
   pt: {
     eyebrow: "Laboratório de Bioluminescência de Fungos · IQ–USP",
@@ -50,7 +48,6 @@ const copy = {
     archive: "Arquivo completo de notícias",
     archiveIntro: "Todas as matérias preservadas do site original do StevaniLab.",
     archiveOpen: "Ver todas as matérias",
-    legacy: "Páginas e recursos anteriores",
   },
 };
 
@@ -66,7 +63,7 @@ const research = [
 ];
 
 const teamMembers = [
-  { name: "Cassius V. Stevani", photo: "/cassius-v-stevani.jpg", profile: "/cassius-v-stevani", roleEn: "Principal Investigator", rolePt: "Pesquisador principal", projectEn: "Fungal bioluminescence, environmental chemistry and bioanalytical applications.", projectPt: "Bioluminescência de fungos, química ambiental e aplicações bioanalíticas." },
+  { name: "Cassius V. Stevani", photo: "/cassius-v-stevani.png", profile: "/cassius-v-stevani", roleEn: "Principal Investigator", rolePt: "Pesquisador principal", projectEn: "Fungal bioluminescence, environmental chemistry and bioanalytical applications.", projectPt: "Bioluminescência de fungos, química ambiental e aplicações bioanalíticas." },
   { name: "Dielle P. Procópio", roleEn: "Postdoctoral Researcher", rolePt: "Pesquisadora de pós-doutorado", projectEn: "Adaptive evolution of PHB-producing Synechocystis sp. PCC6803 for improved acetate consumption.", projectPt: "Evolução adaptativa de Synechocystis sp. PCC6803 produtora de PHB para melhor consumo de acetato.", photo: "/dielle-procopio.png" },
   { name: "Carlos Augusto Hruschka Diegues Fogaça", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Production and development of bioluminescent plants.", projectPt: "Produção e desenvolvimento de plantas bioluminescentes." },
   { name: "Gustavo de Rezende", photo: "/gustavo-de-rezende.png", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Bioenergetics and oxidative stress in bioluminescent fungi.", projectPt: "Bioenergética e estresse oxidativo em fungos bioluminescentes." },
@@ -150,10 +147,12 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-glow" />
         <div className="hero-content">
-          <p className="eyebrow">{t.eyebrow}</p>
           <h1>{t.hero.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
           <div className="hero-bottom">
-            <p>{t.intro}</p>
+            <div className="hero-copy">
+              <p>{t.intro}</p>
+              <p className="eyebrow">{t.eyebrow}</p>
+            </div>
             <a href="#research" className="round-link" aria-label={t.explore}><span>↓</span></a>
           </div>
         </div>
@@ -226,7 +225,6 @@ export default function Home() {
         <div className="news-scroll" tabIndex={0} aria-label="Scrollable news archive">
           {newsItems.map((item) => <a className="news-row" href={item.url} target="_blank" rel="noreferrer" key={item.url}><time>{item.date}</time><div><span>{item.source}</span><h3>{item.title}</h3></div><Arrow /></a>)}
         </div>
-        <div className="legacy-links"><p>{t.legacy}</p>{legacyPages.map(([label, url]) => <a href={url} target="_blank" rel="noreferrer" key={url}>{label} <Arrow /></a>)}</div>
       </section>
 
       <footer className="contact" id="contact">
