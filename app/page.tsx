@@ -194,6 +194,14 @@ const videos = [
   { id: "o0OHS-jNJtc", title: "Globo Repórter PETAR — Pesquisa Noturna", source: "FungusLux" },
 ];
 
+function makeAltmetricScoresReadable() {
+  document.querySelectorAll<HTMLElement>("#selected-publications .altmetric-embed").forEach((badge) => {
+    const description = badge.querySelector<HTMLImageElement>("img")?.alt;
+    const score = description?.match(/altmetric score of ([\d,.]+)/i)?.[1];
+    if (score) badge.dataset.displayScore = score;
+  });
+}
+
 export default function Home() {
   const [lang, setLang] = useState<Lang>("en");
   const t = copy[lang];
@@ -205,7 +213,11 @@ export default function Home() {
         strategy="afterInteractive"
         onReady={() => {
           const altmetricWindow = window as typeof window & { _altmetric_embed_init?: () => void };
+          document.querySelectorAll("#selected-publications .altmetric-embed").forEach((badge) => {
+            badge.addEventListener("altmetric:show", makeAltmetricScoresReadable);
+          });
           altmetricWindow._altmetric_embed_init?.();
+          window.requestAnimationFrame(makeAltmetricScoresReadable);
         }}
       />
       <main>
