@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Script from "next/script";
 import { newsPosts } from "./news-posts";
 import { JournalCovers } from "./journal-covers";
 
@@ -21,6 +22,8 @@ const copy = {
     teamTitle: "The people behind the light",
     pubsTitle: "Selected publications",
     mediaTitle: "Science beyond the lab",
+    videosIntro: "Interviews, field reports and documentaries that bring fungal bioluminescence to a wider audience.",
+    videosCount: "9 films & interviews",
     contactTitle: "Let’s make something glow.",
     contactCopy: "For research collaborations, student opportunities, press and scientific outreach, get in touch with us in São Paulo.",
     allPapers: "View all papers",
@@ -41,6 +44,8 @@ const copy = {
     teamTitle: "As pessoas por trás da luz",
     pubsTitle: "Publicações selecionadas",
     mediaTitle: "Ciência além do laboratório",
+    videosIntro: "Entrevistas, reportagens de campo e documentários que levam a bioluminescência de fungos a novos públicos.",
+    videosCount: "9 vídeos e entrevistas",
     contactTitle: "Vamos fazer algo brilhar.",
     contactCopy: "Para colaborações de pesquisa, oportunidades para estudantes, imprensa e divulgação científica, fale conosco em São Paulo.",
     allPapers: "Ver todos os artigos",
@@ -101,10 +106,60 @@ const alumniGroups = [
 ];
 
 const papers = [
-  ["2026", "A Fungal Bioluminescent Pathway-based yeast biosensor for caffeic acid quantification", "ACS Sensors"],
-  ["2026", "Caffeylpyruvate hydrolase is the key recycling enzyme in fungal bioluminescence", "The FEBS Journal"],
-  ["2025", "Diversity, distribution and evolution of bioluminescent fungi", "Journal of Fungi"],
-  ["2024", "The living light from fungi", "Journal of Photochemistry & Photobiology C"],
+  {
+    year: "2026",
+    journal: "The FEBS Journal",
+    title: "Caffeylpyruvate hydrolase from the bioluminescent fungus Neonothopanus gardneri is the key recycling enzyme in the fungal bioluminescence pathway",
+    doi: "10.1111/febs.70554",
+  },
+  {
+    year: "2019",
+    journal: "Scientific Reports",
+    title: "Neoceroplatus betaryiensis nov. sp. (Diptera: Keroplatidae) is the first record of a bioluminescent fungus-gnat in South America",
+    doi: "10.1038/s41598-019-47753-w",
+  },
+  {
+    year: "2018",
+    journal: "PNAS",
+    title: "A genetically encodable bioluminescent system from fungi",
+    doi: "10.1073/pnas.1803615115",
+  },
+  {
+    year: "2017",
+    journal: "Science Advances",
+    title: "Mechanism and color modulation of fungal bioluminescence",
+    doi: "10.1126/sciadv.1602847",
+  },
+  {
+    year: "2015",
+    journal: "Current Biology",
+    title: "Circadian control sheds light on fungal bioluminescence",
+    doi: "10.1016/j.cub.2015.02.021",
+  },
+  {
+    year: "2012",
+    journal: "Photochemical & Photobiological Sciences",
+    title: "Evidence that a single bioluminescent system is shared by all known bioluminescent fungal lineages",
+    doi: "10.1039/c2pp25032b",
+  },
+  {
+    year: "2011",
+    journal: "Mycologia",
+    title: "Neonothopanus gardneri: a new combination for a bioluminescent agaric from Brazil",
+    doi: "10.3852/11-097",
+  },
+  {
+    year: "2010",
+    journal: "Mycologia",
+    title: "Luminescent Mycena: new and noteworthy species",
+    doi: "10.3852/09-197",
+  },
+  {
+    year: "2009",
+    journal: "Photochemical & Photobiological Sciences",
+    title: "The enzymatic nature of fungal bioluminescence",
+    doi: "10.1039/b908982a",
+  },
 ];
 
 function Arrow() {
@@ -127,12 +182,33 @@ const newsItems = newsPosts
   .map(newsMeta)
   .sort((a, b) => b.stamp - a.stamp || a.title.localeCompare(b.title));
 
+const videos = [
+  { id: "fFBYUu1bgAs", title: "Química É Vida — Cogumelos que brilham no escuro", source: "Instituto de Química da USP" },
+  { id: "TI_jWUQBbdI", title: "Neoceroplatus betaryiensis (Jornal TV Cultura)", source: "FungusLux" },
+  { id: "uEZRVFis688", title: "Cassius Stevani — entrevista completa", source: "Rede Ciência" },
+  { id: "Ril7v3BP1dM", title: "Como fungos usam química para brilhar no escuro da mata", source: "Pesquisa FAPESP" },
+  { id: "gSPHJBFQy7U", title: "Lost in the Light: the story of N. gardneri", source: "Trailblazer with Josh Garcia" },
+  { id: "33-3UCTRZWM", title: "A glowing underground network of fungi", source: "BBC" },
+  { id: "WSsE7eG-ysU", title: "Fungo bioluminescente", source: "Leandro Negro" },
+  { id: "5HoMuLXxGbk", title: "Nature’s bioluminescent mushrooms", source: "TED Talent Search" },
+  { id: "o0OHS-jNJtc", title: "Globo Repórter PETAR — Pesquisa Noturna", source: "FungusLux" },
+];
+
 export default function Home() {
   const [lang, setLang] = useState<Lang>("en");
   const t = copy[lang];
 
   return (
-    <main>
+    <>
+      <Script
+        src="https://embed.altmetric.com/assets/embed.js"
+        strategy="afterInteractive"
+        onReady={() => {
+          const altmetricWindow = window as typeof window & { _altmetric_embed_init?: () => void };
+          altmetricWindow._altmetric_embed_init?.();
+        }}
+      />
+      <main>
       <header className="topbar">
         <a href="#top" className="brand" aria-label="StevaniLab home">
           <img className="brand-logo" src="/stevanilab-logo-white.png" alt="" />
@@ -214,13 +290,44 @@ export default function Home() {
         <p className="kicker light">05 / Publications</p>
         <h2>{t.pubsTitle}</h2>
         <JournalCovers light />
-        <div className="paper-list">{papers.map(([year,title,journal]) => <article key={title}><time>{year}</time><h3>{title}</h3><p>{journal}</p><Arrow /></article>)}</div>
+        <div className="paper-list" id="selected-publications">
+          {papers.map((paper) => {
+            const url = `https://doi.org/${paper.doi}`;
+            return <article key={paper.doi}>
+              <time>{paper.year}</time>
+              <a className="paper-copy" href={url} target="_blank" rel="noreferrer">
+                <p>{paper.journal}</p>
+                <h3>{paper.title}</h3>
+              </a>
+              <div className="paper-metric" aria-label={`Altmetric attention for ${paper.title}`}>
+                <div className="altmetric-embed" data-badge-type="donut" data-badge-popover="right" data-doi={paper.doi} />
+              </div>
+              <a className="paper-arrow" href={url} target="_blank" rel="noreferrer" aria-label={`Open ${paper.title}`}><Arrow /></a>
+            </article>;
+          })}
+        </div>
         <a className="button-light" href="/publications">{t.allPapers} <Arrow /></a>
       </section>
 
       <section className="section media" id="media">
         <p className="kicker">06 / Media & News</p>
         <h2>{t.mediaTitle}</h2>
+        <div className="video-heading"><p>{t.videosIntro}</p><span>{t.videosCount}</span></div>
+        <div className="video-rail" tabIndex={0} aria-label={t.videosCount}>
+          {videos.map((video, index) => <article className="video-card" key={video.id}>
+            <div className="video-frame">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${video.id}`}
+                title={video.title}
+                loading={index === 0 ? "eager" : "lazy"}
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+            <div className="video-meta"><span>{video.source}</span><h3>{video.title}</h3></div>
+          </article>)}
+        </div>
         <div className="news-list-head"><p>{t.archiveIntro}</p><span>{newsPosts.length} stories · newest to oldest</span></div>
         <div className="news-scroll" tabIndex={0} aria-label="Scrollable news archive">
           {newsItems.map((item) => <a className="news-row" href={item.url} target="_blank" rel="noreferrer" key={item.url}><time>{item.date}</time><div><span>{item.source}</span><h3>{item.title}</h3></div><Arrow /></a>)}
@@ -239,6 +346,7 @@ export default function Home() {
           <a href="https://www.nre.navy.mil" target="_blank" rel="noreferrer"><img src="/partners/onr.png" alt="Office of Naval Research" /></a>
         </div></div>
       </footer>
-    </main>
+      </main>
+    </>
   );
 }

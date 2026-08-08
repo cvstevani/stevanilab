@@ -22,10 +22,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "64x64", type: "image/x-icon" },
       { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
     ],
-    shortcut: "/favicon-32.png",
+    shortcut: "/favicon.ico",
     apple: [{ url: "/favicon-192.png", sizes: "192x192", type: "image/png" }],
   },
 };
