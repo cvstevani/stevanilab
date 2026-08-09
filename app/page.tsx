@@ -23,7 +23,7 @@ const copy = {
     pubsTitle: "Selected publications",
     mediaTitle: "Science beyond the lab",
     videosIntro: "Interviews, field reports and documentaries that bring fungal bioluminescence to a wider audience.",
-    videosCount: "9 films & interviews",
+    videosCount: "10 films & interviews",
     contactTitle: "Let’s make something glow.",
     contactCopy: "For research collaborations, student opportunities, press and scientific outreach, get in touch with us in São Paulo.",
     allPapers: "View all papers",
@@ -45,7 +45,7 @@ const copy = {
     pubsTitle: "Publicações selecionadas",
     mediaTitle: "Ciência além do laboratório",
     videosIntro: "Entrevistas, reportagens de campo e documentários que levam a bioluminescência de fungos a novos públicos.",
-    videosCount: "9 vídeos e entrevistas",
+    videosCount: "10 vídeos e entrevistas",
     contactTitle: "Vamos fazer algo brilhar.",
     contactCopy: "Para colaborações de pesquisa, oportunidades para estudantes, imprensa e divulgação científica, fale conosco em São Paulo.",
     allPapers: "Ver todos os artigos",
@@ -183,16 +183,17 @@ const newsItems = newsPosts
   .sort((a, b) => b.stamp - a.stamp || a.title.localeCompare(b.title));
 
 const videos = [
-  { id: "fFBYUu1bgAs", title: "Química É Vida — Cogumelos que brilham no escuro", source: "Instituto de Química da USP" },
-  { id: "TI_jWUQBbdI", title: "Neoceroplatus betaryiensis (Jornal TV Cultura)", source: "FungusLux" },
-  { id: "uEZRVFis688", title: "Cassius Stevani — entrevista completa", source: "Rede Ciência" },
-  { id: "Ril7v3BP1dM", title: "Como fungos usam química para brilhar no escuro da mata", source: "Pesquisa FAPESP" },
-  { id: "gSPHJBFQy7U", title: "Lost in the Light: the story of N. gardneri", source: "Trailblazer with Josh Garcia" },
-  { id: "33-3UCTRZWM", title: "A glowing underground network of fungi", source: "BBC" },
-  { id: "WSsE7eG-ysU", title: "Fungo bioluminescente", source: "Leandro Negro" },
-  { id: "5HoMuLXxGbk", title: "Nature’s bioluminescent mushrooms", source: "TED Talent Search" },
-  { id: "o0OHS-jNJtc", title: "Globo Repórter PETAR — Pesquisa Noturna", source: "FungusLux" },
-];
+  { id: "TI_jWUQBbdI", date: "2022", title: "Neoceroplatus betaryiensis — Jornal TV Cultura", source: "FungusLux" },
+  { id: "fFBYUu1bgAs", date: "2021", title: "Química É Vida — Cogumelos que brilham no escuro", source: "Instituto de Química da USP" },
+  { id: "uEZRVFis688", date: "2019", title: "Cassius Stevani — entrevista completa", source: "Rede Ciência" },
+  { id: "33-3UCTRZWM", date: "2016", title: "A glowing underground network of fungi", source: "BBC" },
+  { id: "sRZI1Kd2bhc", date: "2015", title: "Bioluminescent mushrooms from Palm Forest", source: "Laboratório de Bioluminescência de Fungos" },
+  { id: "Ril7v3BP1dM", date: "2015", title: "Como fungos usam química para brilhar no escuro da mata", source: "Pesquisa FAPESP" },
+  { id: "gSPHJBFQy7U", date: "2013", title: "Lost in the Light: the story of N. gardneri", source: "Trailblazer with Josh Garcia" },
+  { id: "5HoMuLXxGbk", date: "2012", title: "Nature’s bioluminescent mushrooms", source: "TED Talent Search" },
+  { id: "o0OHS-jNJtc", date: "2011-11-18", title: "Globo Repórter PETAR — Pesquisa Noturna", source: "FungusLux" },
+  { id: "WSsE7eG-ysU", date: "2011-06-07", title: "Fungo bioluminescente", source: "Leandro Negro" },
+].sort((a, b) => b.date.localeCompare(a.date));
 
 function makeAltmetricScoresReadable() {
   document.querySelectorAll<HTMLElement>("#selected-publications .altmetric-embed").forEach((badge) => {
@@ -337,7 +338,7 @@ export default function Home() {
                 allowFullScreen
               />
             </div>
-            <div className="video-meta"><span>{video.source}</span><h3>{video.title}</h3></div>
+            <div className="video-meta"><span>{video.source} · <time dateTime={video.date}>{video.date.slice(0, 4)}</time></span><h3>{video.title}</h3></div>
           </article>)}
         </div>
         <div className="news-list-head"><p>{t.archiveIntro}</p><span>{newsPosts.length} stories · newest to oldest</span></div>
