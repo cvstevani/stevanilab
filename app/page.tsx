@@ -4,10 +4,11 @@ import { useState } from "react";
 import Script from "next/script";
 import { newsPosts } from "./news-posts";
 import { JournalCovers } from "./journal-covers";
+import { sortedCollaborators } from "./collaborators";
 
 type Lang = "en" | "pt";
 
-const nav = ["about", "research", "projects", "team", "publications", "media", "contact"];
+const nav = ["about", "research", "projects", "team", "publications", "media", "collaborators", "contact"];
 
 const copy = {
   en: {
@@ -24,6 +25,9 @@ const copy = {
     mediaTitle: "Science beyond the lab",
     videosIntro: "Interviews, field reports and documentaries that bring fungal bioluminescence to a wider audience.",
     videosCount: "10 films & interviews",
+    collaboratorsTitle: "A global network\naround living light.",
+    collaboratorsIntro: "Long-standing collaborators in chemistry, biology, fungal taxonomy, chronobiology and biotechnology.",
+    fullProfile: "View Cassius V. Stevani’s full profile",
     contactTitle: "Let’s make something glow.",
     contactCopy: "For research collaborations, student opportunities, press and scientific outreach, get in touch with us in São Paulo.",
     allPapers: "View all papers",
@@ -46,6 +50,9 @@ const copy = {
     mediaTitle: "Ciência além do laboratório",
     videosIntro: "Entrevistas, reportagens de campo e documentários que levam a bioluminescência de fungos a novos públicos.",
     videosCount: "10 vídeos e entrevistas",
+    collaboratorsTitle: "Uma rede global\nem torno da luz viva.",
+    collaboratorsIntro: "Colaborações de longa data em química, biologia, taxonomia de fungos, cronobiologia e biotecnologia.",
+    fullProfile: "Ver o perfil completo de Cassius V. Stevani",
     contactTitle: "Vamos fazer algo brilhar.",
     contactCopy: "Para colaborações de pesquisa, oportunidades para estudantes, imprensa e divulgação científica, fale conosco em São Paulo.",
     allPapers: "Ver todos os artigos",
@@ -253,7 +260,7 @@ export default function Home() {
         <p className="kicker">01 / About</p>
         <div className="split">
           <h2>{t.aboutTitle.split("\n").map((line) => <span key={line}>{line}</span>)}</h2>
-          <div className="about-copy"><p className="lead">{t.about}</p><p className="signature">Cassius V. Stevani<br/><span>{lang === "en" ? "Principal Investigator" : "Pesquisador principal"}</span></p><img className="institutional-seal" src="/stevanilab-logo-color.jpg" alt="StevaniLab — Bioluminescence, Metagenomics, Biotechnology and Environmental Chemistry" /></div>
+          <div className="about-copy"><p className="lead">{t.about}</p><p className="signature"><a href="/cassius-v-stevani">Cassius V. Stevani ↗</a><br/><span>{lang === "en" ? "Principal Investigator" : "Pesquisador principal"}</span></p><img className="institutional-seal" src="/stevanilab-logo-color.jpg" alt="StevaniLab — Bioluminescence, Metagenomics, Biotechnology and Environmental Chemistry" /></div>
         </div>
       </section>
 
@@ -347,8 +354,15 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section home-collaborators" id="collaborators">
+        <p className="kicker">07 / {lang === "en" ? "Collaborators" : "Colaboradores"}</p>
+        <div className="profile-heading"><h2>{t.collaboratorsTitle.split("\n").map((line) => <span key={line}>{line}</span>)}</h2><p>{t.collaboratorsIntro}</p></div>
+        <div className="collaborator-grid">{sortedCollaborators.map(([name, detail, url]) => <a href={url} target="_blank" rel="noreferrer" key={name}><article><h3>{name} <span>↗</span></h3><p>{detail}</p></article></a>)}</div>
+        <a className="text-link collaborators-profile-link" href="/cassius-v-stevani">{t.fullProfile} <Arrow /></a>
+      </section>
+
       <footer className="contact" id="contact">
-        <p className="kicker light">07 / Contact</p>
+        <p className="kicker light">08 / Contact</p>
         <div className="contact-grid"><h2>{t.contactTitle}</h2><div><p>{t.contactCopy}</p><a className="email" href="mailto:stevani@iq.usp.br">stevani@iq.usp.br <Arrow /></a></div></div>
         <div className="footer-meta"><p>Laboratório de Bioluminescência de Fungos<br/>Instituto de Química · Universidade de São Paulo<br/>Av. Prof. Lineu Prestes, 748 · São Paulo, Brazil</p><p>+55 11 3091-1194<br/><a href="https://www.iq.usp.br" target="_blank">IQ–USP ↗</a></p><img className="footer-logo" src="/stevanilab-logo-white.png" alt="StevaniLab" /></div>
         <div className="funding-strip"><p>Institutional support & funding</p><div>
