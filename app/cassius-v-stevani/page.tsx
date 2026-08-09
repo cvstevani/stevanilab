@@ -1,5 +1,5 @@
 const indicators = [
-  ["FAPESP Researcher Profile", "http://www.bv.fapesp.br/pt/pesquisador/2578/cassius-vinicius-stevani/"],
+  ["FAPESP", "https://bv.fapesp.br/pt/pesquisador/2578/"],
   ["Lattes CV", "http://buscatextual.cnpq.br/buscatextual/cv?id=9931178094449488"],
   ["Google Scholar", "https://scholar.google.com/citations?user=-VZKVnoAAAAJ&hl=en"],
   ["Web of Science", "https://www.webofscience.com/wos/author/record/B-9465-2012"],
