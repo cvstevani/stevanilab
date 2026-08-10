@@ -83,6 +83,7 @@ const teamMembers = [
   { name: "Pedro M. Lopes", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Hydroxylase and β-glycosyltransferase involved in equisetumpyrone biosynthesis in plants.", projectPt: "Hidroxilase e β-glicosiltransferase envolvidas na biossíntese de equisetumpirona em plantas.", photo: "/pedro-lopes.png" },
   { name: "Samir V. F. Atum", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Environmental metagenomics and phylogenetic analyses.", projectPt: "Metagenômica ambiental e análises filogenéticas.", photo: "/samir-atum.png" },
   { name: "Sophia F. D. de Lima", roleEn: "PhD Researcher", rolePt: "Pesquisadora de doutorado", projectEn: "Protoplasts for genome editing in basidiomycetes.", projectPt: "Protoplastos para edição de genoma em basidiomicetos.", photo: "/sophia-de-lima.png" },
+  { name: "Thiago da Mata", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Mechanisms of triplet carbonyl generation and quenching.", projectPt: "Mecanismos de geração e desativação de carbonilas triplete.", photo: "/thiago-da-mata.jpg", profile: "http://lattes.cnpq.br/7156393132868578" },
   { name: "Dan P. Lima", roleEn: "Undergraduate Researcher", rolePt: "Pesquisador de iniciação científica", projectEn: "Preservation and identification of bioluminescent fungi.", projectPt: "Preservação e identificação de fungos bioluminescentes." },
   { name: "Emily Kathrin Ribeiro Silva", roleEn: "Undergraduate Researcher", rolePt: "Pesquisadora de iniciação científica", projectEn: "Bioinformatics and genome assembly.", projectPt: "Bioinformática e montagem de genomas." },
 ];
@@ -287,7 +288,7 @@ export default function Home() {
         <div className="team-grid">{teamMembers.map((member, index) => {
           const portrait = <div className={`portrait portrait-${((index + 1) % 6) || 6}`}>{member.photo && <img src={member.photo} alt={member.name} />}<span>{String(index + 1).padStart(2,"0")}</span>{member.profile && <b className="profile-cue">View profile ↗</b>}</div>;
           return <article key={member.name}>
-            {member.profile ? <a href={member.profile} aria-label={`View ${member.name} profile`}>{portrait}</a> : portrait}
+            {member.profile ? <a href={member.profile} target={member.profile.startsWith("http") ? "_blank" : undefined} rel={member.profile.startsWith("http") ? "noreferrer" : undefined} aria-label={`View ${member.name} profile`}>{portrait}</a> : portrait}
             <h3>{member.name}</h3><p className="member-role">{lang === "en" ? member.roleEn : member.rolePt}</p>
             {(lang === "en" ? member.projectEn : member.projectPt) && <p className="member-project">{lang === "en" ? member.projectEn : member.projectPt}</p>}
           </article>;
