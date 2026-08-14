@@ -85,7 +85,7 @@ const teamMembers = [
   { name: "Samir V. F. Atum", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Environmental metagenomics and phylogenetic analyses.", projectPt: "Metagenômica ambiental e análises filogenéticas.", photo: "/samir-atum-2026.jpg", profile: "http://lattes.cnpq.br/8022005156291218" },
   { name: "Sophia F. D. de Lima", roleEn: "PhD Researcher", rolePt: "Pesquisadora de doutorado", projectEn: "Protoplasts for genome editing in basidiomycetes.", projectPt: "Protoplastos para edição de genoma em basidiomicetos.", photo: "/sophia-de-lima.png" },
   { name: "Thiago da Mata", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Mechanisms of triplet carbonyl generation and quenching.", projectPt: "Mecanismos de geração e desativação de carbonilas triplete.", photo: "/thiago-da-mata.jpg", profile: "http://lattes.cnpq.br/7156393132868578" },
-  { name: "Dan P. Lima", roleEn: "Undergraduate Researcher", rolePt: "Pesquisador de iniciação científica", projectEn: "Preservation and identification of bioluminescent fungi.", projectPt: "Preservação e identificação de fungos bioluminescentes." },
+  { name: "Dan P. Lima", roleEn: "Undergraduate Researcher", rolePt: "Pesquisador de iniciação científica", projectEn: "Preservation and identification of bioluminescent fungi.", projectPt: "Preservação e identificação de fungos bioluminescentes.", photo: "/dan-p-lima.jpg", profile: "https://lattes.cnpq.br/7308562858328784" },
   { name: "Emily Kathrin Ribeiro Silva", roleEn: "Undergraduate Researcher", rolePt: "Pesquisadora de iniciação científica", projectEn: "Bioinformatics and genome assembly.", projectPt: "Bioinformática e montagem de genomas." },
 ];
 
