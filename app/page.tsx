@@ -14,10 +14,10 @@ const copy = {
   en: {
     eyebrow: "Fungal Bioluminescence Laboratory · IQ–USP",
     hero: "The living light\nof fungi.",
-    intro: "We investigate how fungi make light — and how this ancient chemistry can illuminate ecology, biotechnology and new analytical tools.",
+    intro: "We investigate how fungi make light and how this ancient chemistry can illuminate ecology, biotechnology and new analytical tools.",
     explore: "Explore our research",
     aboutTitle: "A natural mystery,\nmade visible.",
-    about: "Bioluminescent mushrooms have been observed since Aristotle, yet their chemistry remained unexplained for millennia. Since 2015, our group has helped reveal the ecological function, luciferin, luciferase and mechanism behind fungal light — working with collaborators across Brazil, Russia, Japan, the United Kingdom and the United States.",
+    about: "Bioluminescent mushrooms have been observed since Aristotle, yet their chemistry remained unexplained for millennia. Since 2015, our group has helped reveal the ecological function, luciferin, luciferase and mechanism behind fungal light in collaboration with researchers across Brazil, Russia, Japan, the United Kingdom and the United States.",
     researchTitle: "From molecule to ecosystem",
     projectsTitle: "Research in motion",
     teamTitle: "The people behind the light",
@@ -26,7 +26,7 @@ const copy = {
     videosIntro: "Interviews, field reports and documentaries that bring fungal bioluminescence to a wider audience.",
     videosCount: "10 films & interviews",
     collaboratorsTitle: "A global network\naround living light.",
-    collaboratorsIntro: "Long-standing collaborators in chemistry, biology, fungal taxonomy, chronobiology and biotechnology.",
+    collaboratorsIntro: "Longtime collaborators in chemistry, biology, fungal taxonomy, chronobiology and biotechnology.",
     fullProfile: "View Cassius V. Stevani’s full profile",
     contactTitle: "Let’s make something glow.",
     contactCopy: "For research collaborations, student opportunities, press and scientific outreach, get in touch with us in São Paulo.",
@@ -39,10 +39,10 @@ const copy = {
   pt: {
     eyebrow: "Laboratório de Bioluminescência de Fungos · IQ–USP",
     hero: "A luz viva\ndos fungos.",
-    intro: "Investigamos como os fungos produzem luz — e como essa química ancestral pode iluminar a ecologia, a biotecnologia e novas ferramentas analíticas.",
+    intro: "Investigamos como os fungos produzem luz e como essa química ancestral pode iluminar a ecologia, a biotecnologia e novas ferramentas analíticas.",
     explore: "Conheça nossa pesquisa",
     aboutTitle: "Um mistério natural,\nagora visível.",
-    about: "Cogumelos bioluminescentes são observados desde Aristóteles, mas sua química permaneceu sem explicação por milênios. Desde 2015, nosso grupo participa da elucidação da função ecológica, luciferina, luciferase e mecanismo da luz fúngica — em colaboração com pesquisadores do Brasil, Rússia, Japão, Reino Unido e Estados Unidos.",
+    about: "Cogumelos bioluminescentes são observados desde Aristóteles, mas sua química permaneceu sem explicação por milênios. Desde 2015, nosso grupo participa da elucidação da função ecológica, luciferina, luciferase e mecanismo da luz fúngica em colaboração com pesquisadores do Brasil, Rússia, Japão, Reino Unido e Estados Unidos.",
     researchTitle: "Da molécula ao ecossistema",
     projectsTitle: "Pesquisa em movimento",
     teamTitle: "As pessoas por trás da luz",
@@ -67,9 +67,9 @@ const research = [
   ["01", "Fungal bioluminescence", "Mechanism, evolution and ecological function of light emission in fungi.", "fungal-bioluminescence"],
   ["02", "Environmental metagenomics", "Microbial biodiversity and metabolic genes in Atlantic Forest water bodies.", "environmental-metagenomics"],
   ["03", "Bioanalytical tools", "Living biosensors and analytical tools built from bioluminescent systems.", "bioanalytical-tools"],
-  ["04", "Chemiluminescence", "Mechanisms and high-energy intermediates in light-producing chemical reactions.", "chemiluminescence"],
+  ["04", "Chemiluminescence", "Mechanisms and chemically excited intermediates in reactions that produce light.", "chemiluminescence"],
   ["05", "Degradation of automotive clearcoat", "Chemical pathways behind polymer damage promoted by dragonfly eggs.", "automotive-clearcoat"],
-  ["06", "Marine and other bioluminescent systems", "Light-emitting proteins and organisms across marine and terrestrial systems.", "marine-bioluminescence"],
+  ["06", "Marine and other bioluminescent systems", "Proteins and organisms that emit light across marine and terrestrial systems.", "marine-bioluminescence"],
   ["07", "Fungal taxonomy", "Discovery, description and evolutionary placement of luminous fungi.", "fungal-taxonomy"],
   ["08", "Others", "Research across environmental chemistry, biotechnology and related systems.", "others"],
 ];
@@ -77,7 +77,7 @@ const research = [
 const teamMembers = [
   { name: "Cassius V. Stevani", photo: "/cassius-v-stevani.png", profile: "/cassius-v-stevani", roleEn: "Principal Investigator", rolePt: "Pesquisador principal", projectEn: "Fungal bioluminescence, environmental chemistry and bioanalytical applications.", projectPt: "Bioluminescência de fungos, química ambiental e aplicações bioanalíticas." },
   { name: "Beatriz do Nascimento", roleEn: "Laboratory Technician", rolePt: "Técnica de laboratório", projectEn: "Laboratory operations and technical support.", projectPt: "Operações laboratoriais e suporte técnico.", photo: "/beatriz-do-nascimento.jpg" },
-  { name: "Dielle P. Procópio", roleEn: "Postdoctoral Researcher", rolePt: "Pesquisadora de pós-doutorado", projectEn: "Adaptive evolution of PHB-producing Synechocystis sp. PCC6803 for improved acetate consumption.", projectPt: "Evolução adaptativa de Synechocystis sp. PCC6803 produtora de PHB para melhor consumo de acetato.", photo: "/dielle-procopio.png" },
+  { name: "Dielle P. Procópio", roleEn: "Postdoctoral Researcher", rolePt: "Pesquisadora de pós-doutorado", projectEn: "Adaptive evolution of Synechocystis sp. PCC6803 that produces PHB, with the goal of improving acetate consumption.", projectPt: "Evolução adaptativa de Synechocystis sp. PCC6803 produtora de PHB para melhor consumo de acetato.", photo: "/dielle-procopio.png" },
   { name: "Carlos Augusto Hruschka Diegues Fogaça", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Production and development of bioluminescent plants.", projectPt: "Produção e desenvolvimento de plantas bioluminescentes." },
   { name: "Gustavo de Rezende", photo: "/gustavo-de-rezende.png", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Bioenergetics and oxidative stress in bioluminescent fungi.", projectPt: "Bioenergética e estresse oxidativo em fungos bioluminescentes." },
   { name: "Pedro Bongiorno Miragaia", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Prospection, cultivation and characterization of bacterial biopolymers.", projectPt: "Prospecção, cultivo e caracterização de biopolímeros bacterianos.", photo: "/pedro-bongiorno-miragaia.png" },
@@ -192,15 +192,15 @@ const newsItems = newsPosts
   .sort((a, b) => b.stamp - a.stamp || a.title.localeCompare(b.title));
 
 const videos = [
-  { id: "TI_jWUQBbdI", date: "2022", title: "Neoceroplatus betaryiensis — Jornal TV Cultura", source: "FungusLux" },
-  { id: "fFBYUu1bgAs", date: "2021", title: "Química É Vida — Cogumelos que brilham no escuro", source: "Instituto de Química da USP" },
-  { id: "uEZRVFis688", date: "2019", title: "Cassius Stevani — entrevista completa", source: "Rede Ciência" },
+  { id: "TI_jWUQBbdI", date: "2022", title: "Neoceroplatus betaryiensis: Jornal TV Cultura", source: "FungusLux" },
+  { id: "fFBYUu1bgAs", date: "2021", title: "Química É Vida: Cogumelos que brilham no escuro", source: "Instituto de Química da USP" },
+  { id: "uEZRVFis688", date: "2019", title: "Cassius Stevani: entrevista completa", source: "Rede Ciência" },
   { id: "33-3UCTRZWM", date: "2016", title: "A glowing underground network of fungi", source: "BBC" },
   { id: "sRZI1Kd2bhc", date: "2015", title: "Bioluminescent mushrooms from Palm Forest", source: "Laboratório de Bioluminescência de Fungos" },
   { id: "Ril7v3BP1dM", date: "2015", title: "Como fungos usam química para brilhar no escuro da mata", source: "Pesquisa FAPESP" },
   { id: "gSPHJBFQy7U", date: "2013", title: "Lost in the Light: the story of N. gardneri", source: "Trailblazer with Josh Garcia" },
   { id: "5HoMuLXxGbk", date: "2012", title: "Nature’s bioluminescent mushrooms", source: "TED Talent Search" },
-  { id: "o0OHS-jNJtc", date: "2011-11-18", title: "Globo Repórter PETAR — Pesquisa Noturna", source: "FungusLux" },
+  { id: "o0OHS-jNJtc", date: "2011-11-18", title: "Globo Repórter PETAR: Pesquisa Noturna", source: "FungusLux" },
   { id: "WSsE7eG-ysU", date: "2011-06-07", title: "Fungo bioluminescente", source: "Leandro Negro" },
 ].sort((a, b) => b.date.localeCompare(a.date));
 
@@ -262,7 +262,7 @@ export default function Home() {
         <p className="kicker">01 / About</p>
         <div className="split">
           <h2>{t.aboutTitle.split("\n").map((line) => <span key={line}>{line}</span>)}</h2>
-          <div className="about-copy"><p className="lead">{t.about}</p><p className="signature"><a href="/cassius-v-stevani">Cassius V. Stevani ↗</a><br/><span>{lang === "en" ? "Principal Investigator" : "Pesquisador principal"}</span></p><img className="institutional-seal" src="/stevanilab-logo-color.jpg" alt="StevaniLab — Bioluminescence, Metagenomics, Biotechnology and Environmental Chemistry" /></div>
+          <div className="about-copy"><p className="lead">{t.about}</p><p className="signature"><a href="/cassius-v-stevani">Cassius V. Stevani ↗</a><br/><span>{lang === "en" ? "Principal Investigator" : "Pesquisador principal"}</span></p><img className="institutional-seal" src="/stevanilab-logo-color.jpg" alt="StevaniLab: Bioluminescence, Metagenomics, Biotechnology and Environmental Chemistry" /></div>
         </div>
       </section>
 
@@ -285,7 +285,7 @@ export default function Home() {
 
       <section className="section team" id="team">
         <p className="kicker">04 / Team</p>
-        <div className="split team-head"><h2>{t.teamTitle}</h2><p>We are chemists, biologists and biotechnologists united by curiosity — from molecular mechanisms to living ecosystems.</p></div>
+        <div className="split team-head"><h2>{t.teamTitle}</h2><p>We are chemists, biologists and biotechnologists united by curiosity, with work spanning molecular mechanisms and living ecosystems.</p></div>
         <div className="team-grid">{teamMembers.map((member, index) => {
           const portrait = <div className={`portrait portrait-${((index + 1) % 6) || 6}`}>{member.photo && <img src={member.photo} alt={member.name} />}<span>{String(index + 1).padStart(2,"0")}</span>{member.profile && <b className="profile-cue">View profile ↗</b>}</div>;
           return <article key={member.name}>

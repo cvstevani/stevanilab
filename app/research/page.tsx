@@ -26,16 +26,16 @@ const topics: Record<string, Topic> = {
     ["2015","Photo chemistry without light?","Journal of the Brazilian Chemical Society","/publications"],
     ["2002","Kinetic studies on the peroxyoxalate chemiluminescence reaction","Luminescence","/publications"],
   ]},
-  "automotive-clearcoat": { title:"Degradation of automotive clearcoat", intro:"The chemical origin of coating damage caused by dragonfly eggs, connecting biological deposition, amino-acid oxidation and polymer degradation.", articles:[
+  "automotive-clearcoat": { title:"Degradation of automotive clearcoat", intro:"The chemical origin of coating damage caused by dragonfly eggs, connecting biological deposition, oxidation of amino acids and polymer degradation.", articles:[
     ["2001","Cysteic acid is the chemical mediator of automotive clearcoat damage promoted by dragonfly eggs","Journal of Applied Polymer Science","/publications"],
   ]},
-  "marine-bioluminescence": { title:"Marine and other bioluminescent systems", intro:"Photoproteins, luciferases and luminous organisms beyond fungi, from deep-sea coral, ctenophores, annelids and squid to bioluminescent insects.", articles:[
+  "marine-bioluminescence": { title:"Marine and other bioluminescent systems", intro:"Photoproteins, luciferases and luminous organisms beyond fungi, including coral from the deep sea, ctenophores, annelids, squid and bioluminescent insects.", articles:[
     ["2026","A coelenterazine-dependent luciferase from the deep-sea coral Anthoptilum murrayi","Biochemical and Biophysical Research Communications","/publications"],
     ["2025","Velamins: green-light-emitting calcium-regulated photoproteins isolated from Velamen parallelum","The FEBS Journal","https://doi.org/10.1111/febs.70096"],
     ["2021","Bioluminescence in polynoid scale worms","Frontiers in Marine Science","https://doi.org/10.3389/fmars.2021.643197"],
     ["2019","Neoceroplatus betaryiensis is the first record of a bioluminescent fungus-gnat in South America","Scientific Reports","https://doi.org/10.1038/s41598-019-47753-w"],
   ]},
-  "fungal-taxonomy": { title:"Fungal taxonomy", intro:"Discovery, description, classification and evolutionary relationships of luminous mushroom-forming fungi.", articles:[
+  "fungal-taxonomy": { title:"Fungal taxonomy", intro:"Discovery, description, classification and evolutionary relationships of luminous fungi that form mushrooms.", articles:[
     ["2025","Diversity, distribution and evolution of bioluminescent fungi","Journal of Fungi","https://doi.org/10.3390/jof11010019"],
     ["2023","Eoscyphella luciurceolata gen. and sp. nov. sheds light on Cyphellopsidaceae","Journal of Fungi","https://doi.org/10.3390/jof9101004"],
     ["2016","New luminescent mycenoid fungi from São Paulo State, Brazil","Mycologia","/publications"],

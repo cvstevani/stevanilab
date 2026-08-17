@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "StevaniLab — Fungal Bioluminescence Laboratory",
+  title: "StevaniLab: Fungal Bioluminescence Laboratory",
   description: "Researching the mechanism, evolution and applications of fungal bioluminescence at the University of São Paulo.",
   openGraph: {
-    title: "StevaniLab — The Living Light of Fungi",
+    title: "StevaniLab: The Living Light of Fungi",
     description: "Fungal bioluminescence research at the University of São Paulo.",
     images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
