@@ -13,6 +13,7 @@ export const collaborators = [
   ["Karen Sarkisyan", "Biologist · Imperial College London, UK", "https://www.designing.bio/team"],
   ["Ilia V. Yampolsky", "Chemist · IBCh RAS, Russia", "https://yampolsky.ibch.ru"],
   ["Dennis E. Desjardin", "Biologist · San Francisco State University, USA", "https://en.wikipedia.org/wiki/Dennis_E._Desjardin"],
+  ["Diego Cunha Zied", "UNESP Dracena, Brazil", "https://www.dracena.unesp.br/#!/laboratorios-de-pesquisa/centro-de-estudos-em-cogumelos/"],
   ["Jay C. Dunlap", "Biologist · Dartmouth Geisel School of Medicine, USA", "https://geiselmed.dartmouth.edu/dunlaploros/"],
   ["Jennifer J. Loros", "Biologist · Dartmouth Geisel School of Medicine, USA", "https://geiselmed.dartmouth.edu/faculty/facultydb/view.php/?uid=127"],
   ["Paul Marek", "Biologist · Virginia Tech, USA", "https://millipedes.ento.vt.edu/people/"],
