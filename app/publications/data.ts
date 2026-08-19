@@ -1,5 +1,11 @@
 export const publications = [
   {
+    "number": 75,
+    "year": "2026",
+    "citation": "D. P. Procópio, A. Santin, C. V. Stevani. Adaptive Laboratory Evolution in Synechocystis sp. PCC 6803: Current Status and Perspectives. Microorganisms 14: 1836 (2026).",
+    "url": "https://doi.org/10.3390/microorganisms14081836"
+  },
+  {
     "number": 74,
     "year": "2026",
     "citation": "C. K. Zamuner, T. M. V. Gomes, E. L. Bastos, K. A. Palkina, I. V. Yampolsky, E. J. H. Bechara, C. V. Stevani. A Fungal Bioluminescent Pathway (FBP)-based yeast biosensor for caffeic acid quantification in food and beverages. ACS Sensors 11: 5621–5634 (2026).",
