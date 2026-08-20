@@ -102,7 +102,7 @@ const alumniGroups = [
     members: [
       ["Anderson Garbuglio de Oliveira", "/alumni/anderson-oliveira.jpg", "https://www.theoliveiralab.com"],
       ["Bianca de Barros Nóbrega", "/alumni/bianca-nobrega.png", ""],
-      ["Caio Klocke Zamuner", "/alumni/caio-zamuner.png", ""],
+      ["Caio Klocke Zamuner", "/alumni/caio-zamuner.jpg", ""],
       ["Fernanda de Freitas Ventura", "/alumni/fernanda-ventura.jpg", ""],
       ["Gabriel Nóbrega da Rocha Martins", "/alumni/gabriel-martins.jpg", "https://br.linkedin.com/in/gabrielmartinshplc"],
       ["Hans Eugene Waldenmaier", "/alumni/hans-waldenmaier.jpg", "https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0665353726.04"],
