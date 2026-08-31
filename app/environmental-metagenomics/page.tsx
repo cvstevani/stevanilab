@@ -1,8 +1,8 @@
 const sites = [
-  ["Guarapiranga Reservoir", "São Paulo, SP", "December 2020", "Metagenomic analysis of water from a major urban reservoir that supplies the São Paulo metropolitan region."],
-  ["Lagoa Vermelha", "Apiaí, SP · PETAR", "May 2021", "A millenary natural pond within the Atlantic Forest in Alto Ribeira Touristic State Park."],
-  ["Lagoa Grande", "Iporanga, SP", "August 2021", "A millenary natural pond in the Atlantic Forest near Bairro da Serra."],
-  ["Lagoa de Furnas", "Iporanga, SP", "August 2021", "An artificial pond created in the 1950s and surrounded by Atlantic Forest."],
+  ["Guarapiranga Reservoir", "São Paulo, SP", "December 2020", "Metagenomic analysis of water from a major urban reservoir that supplies the São Paulo metropolitan region.", "/krona/guarapiranga.html"],
+  ["Lagoa Vermelha", "Apiaí, SP · PETAR", "May 2021", "A millenary natural pond within the Atlantic Forest in Alto Ribeira Touristic State Park.", "/krona/lagoa-vermelha.html"],
+  ["Lagoa Grande", "Iporanga, SP", "August 2021", "A millenary natural pond in the Atlantic Forest near Bairro da Serra.", "/krona/lagoa-grande.html"],
+  ["Lagoa de Furnas", "Iporanga, SP", "August 2021", "An artificial pond created in the 1950s and surrounded by Atlantic Forest.", "/krona/lagoa-de-furnas.html"],
 ] as const;
 
 const team = [
@@ -21,7 +21,7 @@ export default function EnvironmentalMetagenomics() {
 
     <section className="profile-section meta-overview"><div><p className="kicker">01 / The project</p><h2>Mapping an invisible ecosystem.</h2></div><div className="meta-overview-copy"><p>Started in 2020, the Environmental Metagenomics project investigates the biodiversity of microorganisms and metabolic genes in freshwater bodies, with a special focus on the Atlantic Forest biome. By sequencing DNA directly from environmental samples, the team can study organisms that cannot easily be cultivated in the laboratory and connect taxonomic diversity with ecological function.</p><p>Iniciado em 2020, o projeto de Metagenômica Ambiental investiga a biodiversidade de microrganismos e genes metabólicos em corpos d’água, principalmente no bioma da Mata Atlântica. O DNA obtido diretamente das amostras ambientais permite revelar organismos de difícil cultivo e relacionar diversidade taxonômica e função ecológica.</p></div></section>
 
-    <section className="profile-section meta-sites"><p className="kicker">02 / Sampling sites · Locais</p><h2>From an urban reservoir<br/>to ancient forest ponds.</h2><div className="sampling-grid">{sites.map(([name,place,date,text])=><article key={name}><time>{date}</time><h3>{name}</h3><p><strong>{place}</strong><br/>{text}</p></article>)}</div></section>
+    <section className="profile-section meta-sites"><p className="kicker">02 / Sampling sites · Locais</p><h2>From an urban reservoir<br/>to ancient forest ponds.</h2><div className="sampling-grid">{sites.map(([name,place,date,text,url])=><a className="sampling-card" href={url} target="_blank" rel="noreferrer" aria-label={`Explore the interactive Krona chart for ${name}`} key={name}><time>{date}</time><h3>{name}</h3><p><strong>{place}</strong><br/>{text}</p><span>Explore Krona ↗</span></a>)}</div></section>
 
     <section className="profile-section meta-team"><p className="kicker light">03 / Research network</p><h2>A collaborative view<br/>of microbial diversity.</h2><div className="meta-team-list">{[...team].sort(([a],[b])=>a.localeCompare(b,"en",{sensitivity:"base"})).map(([name,role,url])=><a href={url} target={url.startsWith("http")?"_blank":undefined} rel="noreferrer" key={name}><article><h3>{name} <span>↗</span></h3><p>{role}</p></article></a>)}</div><a className="meta-partner" href="https://ipbio.org.br" target="_blank" rel="noreferrer"><span>Institutional partner</span><strong>IPBio ↗</strong></a></section>
 

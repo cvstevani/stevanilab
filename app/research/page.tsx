@@ -13,7 +13,7 @@ const topics: Record<string, Topic> = {
     ["2015","Circadian control sheds light on fungal bioluminescence","Current Biology","https://doi.org/10.1016/j.cub.2015.02.021"],
   ]},
   "environmental-metagenomics": { title:"Environmental metagenomics", intro:"Environmental DNA reveals microbial biodiversity, community structure and metabolic genes across freshwater and cultivated ecosystems.", articles:[
-    ["2022","Metaprofiling of the bacterial community in colonized compost extracts by Agaricus subrufescens","Journal of Fungi","https://doi.org/10.3390/jof8090995"],
+    ["2022","Metaprofiling of the bacterial community in colonized compost extracts by Agaricus subrufescens","Journal of Fungi","https://doi.org/10.3390/jof8100995"],
     ["2021","Exploring the microbiota of the Guarapiranga water reservoir with long-read sequencing technology","Frontiers in Marine Science","https://doi.org/10.3389/fmars.2021.791101"],
   ]},
   "bioanalytical-tools": { title:"Bioanalytical tools", intro:"Bioluminescent organisms and pathways become sensitive tools for quantification, toxicity assessment and environmental monitoring.", articles:[
