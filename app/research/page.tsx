@@ -55,7 +55,7 @@ function newsMeta(post:(typeof newsPosts)[number]) {
 }
 
 function newsTopic(slug:string) {
-  if (/(marinho|marine|polynoid|squid|antonina|neoceroplatus|inseto-sul-americano|larva-brilhante|mosquito-brilhante)/.test(slug)) return "marine-bioluminescence";
+  if (/(marinho|marine|mar-profundo|deep-sea|coral|polynoid|squid|antonina|neoceroplatus|inseto-sul-americano|larva-brilhante|mosquito-brilhante)/.test(slug)) return "marine-bioluminescence";
   if (/(montadoras|libélula|libelula|clearcoat|automotive)/.test(slug)) return "automotive-clearcoat";
   if (/(peróxido|peroxido|chemilum|triplet|célula-solar|celula-solar)/.test(slug)) return "chemiluminescence";
   if (/(chip|biosensor|petunia|trees-lighting|glowing-organisms|brilho-construído|brilho-construido|sustentável|sustentavel)/.test(slug)) return "bioanalytical-tools";

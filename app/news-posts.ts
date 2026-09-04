@@ -1,4 +1,5 @@
 export const newsPosts = [
+  {"date":"2026-09-04","source":"Agência FAPESP","title":"Enzima que gera luz no frio extremo é descoberta em coral de mar profundo","link":"https://agencia.fapesp.br/enzima-que-gera-luz-no-frio-extremo-e-descoberta-em-coral-de-mar-profundo/59126"},
   {"date":"2026-06-10","source":"Pesquisa FAPESP","title":"Levantamentos de organismos bioluminescentes geram propostas turísticas","link":"https://revistapesquisa.fapesp.br/levantamentos-de-organismos-bioluminescentes-geram-propostas-turisticas/"},
   {"date":"2026-06-02","source":"FEBS Network","title":"“Glowy” fungi illuminate the path to understanding bioluminescence","link":"https://network.febs.org/posts/glowy-fungi-light-the-path-to-understanding-bioluminescence"},
   {"date":"2025-08-07","source":"Pesquisa FAPESP","title":"Organismo marinho tem fotoproteína verde desconhecida","link":"https://revistapesquisa.fapesp.br/organismo-marinho-tem-fotoproteina-verde-desconhecida/"},
