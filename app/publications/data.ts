@@ -1,5 +1,11 @@
 export const publications = [
   {
+    "number": 76,
+    "year": "2026",
+    "citation": "T. M. V. Gomes, C. V. Stevani, K. Pantopoulos, L. D. Ramos, E. J. H. Bechara. Triplet Acetone Generation by Pseudoperoxidase Activity of Myoglobin: Structural Damage and Quenching. Luminescence 41: e70618 (2026).",
+    "url": "https://doi.org/10.1002/bio.70618"
+  },
+  {
     "number": 75,
     "year": "2026",
     "citation": "D. P. Procópio, A. Santin, C. V. Stevani. Adaptive Laboratory Evolution in Synechocystis sp. PCC 6803: Current Status and Perspectives. Microorganisms 14: 1836 (2026).",

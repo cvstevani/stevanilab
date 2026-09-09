@@ -22,6 +22,7 @@ const topics: Record<string, Topic> = {
     ["2021","Toxicity of metal cations and phenolic compounds to Neonothopanus gardneri","Environmental Advances","https://doi.org/10.1016/j.envadv.2021.100044"],
   ]},
   "chemiluminescence": { title:"Chemiluminescence", intro:"Mechanistic studies of peroxyoxalate systems, triplet carbonyls and chemical reactions that generate electronically excited states.", articles:[
+    ["2026","Triplet Acetone Generation by Pseudoperoxidase Activity of Myoglobin: Structural Damage and Quenching","Luminescence","https://doi.org/10.1002/bio.70618"],
     ["2023","Mining reactive triplet carbonyls in biological systems","Journal of Photochemistry and Photobiology B","https://doi.org/10.1016/j.jphotobiol.2023.112712"],
     ["2015","Photo chemistry without light?","Journal of the Brazilian Chemical Society","/publications"],
     ["2002","Kinetic studies on the peroxyoxalate chemiluminescence reaction","Luminescence","/publications"],
