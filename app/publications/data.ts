@@ -1,5 +1,11 @@
 export const publications = [
   {
+    "number": 77,
+    "year": "2026",
+    "citation": "A. A. Fadeeva, A. D. Barykin, A. Bubyrev, N. M. Markina, T. V. Chepurnykh, A. A. Andrianova, E. S. Shakhova, M. A. Abakumov, A. S. Garanina, R. I. Zagitova, O. A. Belozerova, O. N. Yatskin, A. Yu. Gorokhovatsky, C. V. Stevani, A. S. Mishin, I. V. Yampolsky, Z. M. Kaskova. Chemical Tuning of Fungal Bioluminescence in Mammalian Systems. ChemBioChem 27: e70554 (2026).",
+    "url": "https://doi.org/10.1002/cbic.70554"
+  },
+  {
     "number": 76,
     "year": "2026",
     "citation": "T. M. V. Gomes, C. V. Stevani, K. Pantopoulos, L. D. Ramos, E. J. H. Bechara. Triplet Acetone Generation by Pseudoperoxidase Activity of Myoglobin: Structural Damage and Quenching. Luminescence 41: e70618 (2026).",
@@ -26,14 +32,14 @@ export const publications = [
   {
     "number": 72,
     "year": "2026",
-    "citation": "A. K. Malyshevskaia, A. D. Barykin, D. A. Kisilichuk, T. V. Chepurnykh, E. S. Shakhova, M. M. Perfilov, O. A. Belozerova, K. A. Palkina, N. M. Markina, C. K. Zamuner, D. M. M. Soares, R. I. Zagitova, Z. M. Kaskova, C. V. Stevani, A. Y. Gorokhovatsky, A. S. Mishin, K. S. Sarkisyan, I. V. Yampolsky. Fungal oxyluciferin is recycled by caffeylpyruvate hydrolases. FEBS J. 292: 1-16 (2026).",
-    "url": "https://febs.onlinelibrary.wiley.com/doi/10.1111/febs.70555"
+    "citation": "A. K. Malyshevskaia, A. D. Barykin, D. A. Kisilichuk, T. V. Chepurnykh, E. S. Shakhova, M. M. Perfilov, O. A. Belozerova, K. A. Palkina, N. M. Markina, C. K. Zamuner, D. M. M. Soares, R. I. Zagitova, Z. M. Kaskova, C. V. Stevani, A. Y. Gorokhovatsky, A. S. Mishin, K. S. Sarkisyan, I. V. Yampolsky. Fungal oxyluciferin is recycled by caffeylpyruvate hydrolases. FEBS J. 293: 6038–6050 (2026).",
+    "url": "https://doi.org/10.1111/febs.70555"
   },
   {
     "number": 71,
     "year": "2026",
-    "citation": "C. K. Zamuner, D. M. M. Soares, B. B. Nóbrega, E. J. H. Bechara, Z. M. Kaskova, A. S. Mishin, K. S. Sarkisyan, I. V. Yampolsky, C. V. Stevani. Caffeylpyruvate hydrolase from the bioluminescent fungus Neonothopanus gardneri is the key recycling enzyme in the fungal bioluminescence pathway. FEBS J. 292: 1-16 (2026).",
-    "url": "https://febs.onlinelibrary.wiley.com/doi/10.1111/febs.70554"
+    "citation": "C. K. Zamuner, D. M. M. Soares, B. B. Nóbrega, E. J. H. Bechara, Z. M. Kaskova, A. S. Mishin, K. S. Sarkisyan, I. V. Yampolsky, C. V. Stevani. Caffeylpyruvate hydrolase from the bioluminescent fungus Neonothopanus gardneri is the key recycling enzyme in the fungal bioluminescence pathway. FEBS J. 293: 6022–6037 (2026).",
+    "url": "https://doi.org/10.1111/febs.70554"
   },
   {
     "number": 70,
