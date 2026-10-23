@@ -119,7 +119,7 @@ const alumniGroups = [
       ["Caio Klocke Zamuner", "/alumni/caio-zamuner.jpg", "https://bv.fapesp.br/pt/pesquisador/707011/caio-klocke-zamuner/"],
       ["Fernanda de Freitas Ventura", "/alumni/fernanda-ventura.jpg", "https://lattes.cnpq.br/3556448023842613"],
       ["Gabriel Nóbrega da Rocha Martins", "/alumni/gabriel-martins.jpg", "https://br.linkedin.com/in/gabrielmartinshplc"],
-      ["Hans Eugene Waldenmaier", "/alumni/hans-waldenmaier.jpg", "https://app.dimensions.ai/discover/publication?and_facet_researcher=ur.0665353726.04"],
+      ["Hans Eugene Waldenmaier", "/alumni/hans-waldenmaier.jpg", "https://www.linkedin.com/in/hans-waldenmaier-2674a792/?locale=pt"],
       ["Luiz Fernando Mendes", "/alumni/luiz-mendes.jpg", "https://www.linkedin.com/in/dr-luiz-fernando-mendes-phd-usp-0aaab827a/"],
       ["Olivia Domingues", "/alumni/olivia-domingues.jpg", "https://br.linkedin.com/in/olivia-domingues-bazito-23862431"],
       ["Rodrigo Pimenta Carvalho", "/alumni/rodrigo-carvalho.jpg", "https://br.linkedin.com/in/pimentarc"],
