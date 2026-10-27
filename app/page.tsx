@@ -20,6 +20,13 @@ const copy = {
     about: "For more than three decades, the scientific journey behind StevaniLab has evolved from pure chemistry to the study of living systems and entire ecosystems. It began with peroxyoxalate chemiluminescence, a purely chemical, in vitro system investigated as a fundamental academic problem. During postdoctoral research, the search for a more applied question and for fieldwork led to studies of polymer degradation caused by dragonfly eggs. At the same time, research and field collections of fireflies opened a path toward biological light. During one of those expeditions, the idea arose to investigate bioluminescent mushrooms, beginning a project that would help reveal the ecological function, luciferin, luciferase and mechanism of fungal bioluminescence. Today, this trajectory extends to other bioluminescent systems and environmental metagenomics, connecting chemistry, biodiversity, ecology, biotechnology and new analytical tools through international collaboration.",
     researchTitle: "From molecule to ecosystem",
     projectsTitle: "Research in motion",
+    embassyKicker: "2021 to 2022 · Funded by the U.S. Embassy and Consulates in Brazil",
+    embassyTitle: "Green Development Initiative",
+    embassyText: "Over one year, the Green Development Initiative strengthened cultural ties between Brazil and the United States while connecting young people in Iporanga with the biodiversity, ecotourism, local culture and potential of their own communities. Through thematic workshops and immersion in nature, participants developed new perspectives on environmental conservation, sustainable tourism and local entrepreneurship.",
+    embassyImpact: "The project was funded by the U.S. Embassy and Consulates in Brazil, with the participation of IQ-USP and IPBio.",
+    embassyLink: "Watch the final film",
+    embassyCallFilm: "The 2021 project call",
+    embassyFinalFilm: "The future of Iporanga: project results",
     planetKicker: "Filmed March 2015 · Planet Earth II · Jungles · 2016",
     planetTitle: "One month in the forest with the BBC",
     planetText: "In March 2015, StevaniLab spent one month in the field with a BBC team from Bristol to bring the ecology of bioluminescent fungi to Planet Earth II. Producer Emma Napper, Charlotte Bostock and cameraman Alastair MacEwen joined the laboratory team to film luminous mushrooms, nocturnal insects and the ecological role of fungal light.",
@@ -31,7 +38,7 @@ const copy = {
     pubsTitle: "Selected publications",
     mediaTitle: "Science beyond the lab",
     videosIntro: "Interviews, field reports and documentaries that bring fungal bioluminescence to a wider audience.",
-    videosCount: "11 films & interviews",
+    videosCount: "13 films & interviews",
     collaboratorsTitle: "A global network\naround living light.",
     collaboratorsIntro: "Longtime collaborators in chemistry, biology, fungal taxonomy, chronobiology and biotechnology.",
     fullProfile: "View Cassius V. Stevani’s full profile",
@@ -52,6 +59,13 @@ const copy = {
     about: "Há mais de três décadas, a trajetória científica que deu origem ao StevaniLab evolui da química pura para o estudo de sistemas vivos e ecossistemas inteiros. O trabalho começou com a quimiluminescência do sistema peróxi oxalato, um sistema puramente químico e in vitro, investigado como um problema acadêmico fundamental. Durante o pós doutoramento, a busca por uma questão mais aplicada e pelo trabalho de campo levou ao estudo da degradação de polímeros causada por ovos de libélulas. Ao mesmo tempo, pesquisas e coletas de vagalumes abriram o caminho para o estudo da luz biológica. Em uma dessas expedições surgiu a ideia de investigar cogumelos bioluminescentes, dando início ao projeto que ajudaria a revelar a função ecológica, a luciferina, a luciferase e o mecanismo da bioluminescência de fungos. Hoje, essa trajetória se estende a outros sistemas bioluminescentes e à metagenômica ambiental, conectando química, biodiversidade, ecologia, biotecnologia e novas ferramentas analíticas por meio de colaborações internacionais.",
     researchTitle: "Da molécula ao ecossistema",
     projectsTitle: "Pesquisa em movimento",
+    embassyKicker: "2021 a 2022 · Financiado pela Embaixada e pelos Consulados dos EUA no Brasil",
+    embassyTitle: "Iniciativa de Desenvolvimento Verde",
+    embassyText: "Ao longo de um ano, a Iniciativa de Desenvolvimento Verde fortaleceu os laços culturais entre o Brasil e os Estados Unidos e aproximou os jovens de Iporanga da biodiversidade, do ecoturismo, da cultura local e das potencialidades de suas próprias comunidades. Por meio de oficinas temáticas e imersões na natureza, os participantes desenvolveram novas perspectivas sobre preservação ambiental, turismo sustentável e empreendedorismo local.",
+    embassyImpact: "O projeto foi financiado pela Embaixada e pelos Consulados dos EUA no Brasil, com a participação do IQ-USP e do IPBio.",
+    embassyLink: "Assistir ao vídeo final",
+    embassyCallFilm: "A chamada do projeto em 2021",
+    embassyFinalFilm: "O futuro de Iporanga: resultados do projeto",
     planetKicker: "Filmado em março de 2015 · Planet Earth II · Jungles · 2016",
     planetTitle: "Um mês na floresta com a BBC",
     planetText: "Em março de 2015, o StevaniLab passou um mês em campo com uma equipe da BBC de Bristol para levar a ecologia dos fungos bioluminescentes ao documentário Planet Earth II. A produtora Emma Napper, Charlotte Bostock e o cinegrafista Alastair MacEwen acompanharam a equipe do laboratório no registro dos cogumelos luminosos, dos insetos noturnos e do papel ecológico da luz dos fungos.",
@@ -63,7 +77,7 @@ const copy = {
     pubsTitle: "Publicações selecionadas",
     mediaTitle: "Ciência além do laboratório",
     videosIntro: "Entrevistas, reportagens de campo e documentários que levam a bioluminescência de fungos a novos públicos.",
-    videosCount: "11 vídeos e entrevistas",
+    videosCount: "13 vídeos e entrevistas",
     collaboratorsTitle: "Uma rede global\nem torno da luz viva.",
     collaboratorsIntro: "Colaborações de longa data em química, biologia, taxonomia de fungos, cronobiologia e biotecnologia.",
     fullProfile: "Ver o perfil completo de Cassius V. Stevani",
@@ -206,7 +220,9 @@ const newsItems = newsPosts
   .sort((a, b) => b.stamp - a.stamp || a.title.localeCompare(b.title));
 
 const videos = [
+  { id: "1ox6LpHwgpo", date: "2022-09-06", title: "Iniciativa de Desenvolvimento Verde: O Futuro de Iporanga", source: "IPBio" },
   { id: "TI_jWUQBbdI", date: "2022", title: "Neoceroplatus betaryiensis: Jornal TV Cultura", source: "FungusLux" },
+  { id: "ocOJJ6dqwx4", date: "2021-09-30", title: "Green Development Initiative / Iniciativa de Desenvolvimento Verde", source: "IPBio" },
   { id: "fFBYUu1bgAs", date: "2021", title: "Química É Vida: Cogumelos que brilham no escuro", source: "Instituto de Química da USP" },
   { id: "uEZRVFis688", date: "2019", title: "Cassius Stevani: entrevista completa", source: "Rede Ciência" },
   { id: "sRZI1Kd2bhc", date: "2016", title: "Fungal bioluminescence by BBC’s Planet Earth II", source: "BBC Planet Earth II" },
@@ -295,6 +311,16 @@ export default function Home() {
         <div className="project-grid">
           <article className="project project-lumm"><div className="project-image" /><div className="project-copy"><p>Living database · 130+ species</p><h3>LUMM</h3><p>The Luminescent Mushroom Database connects taxonomy, ecology, morphology, genomics and evolution.</p><a href="https://lumm.uneb.br/en" target="_blank" rel="noreferrer">{t.visit} <Arrow /></a></div></article>
           <article className="project project-meta"><div className="project-image" /><div className="project-copy"><p>Atlantic Forest · Since 2020</p><h3>Environmental metagenomics</h3><p>Mapping microorganisms and metabolic genes across reservoirs and ancient forest lagoons.</p><a href="/environmental-metagenomics">{t.visit} <Arrow /></a></div></article>
+          <article className="project project-embassy">
+            <div className="project-embassy-intro">
+              <div><p className="project-embassy-kicker">{t.embassyKicker}</p><h3>{t.embassyTitle}</h3></div>
+              <div className="project-embassy-copy"><p>{t.embassyText}</p><p>{t.embassyImpact}</p><a href="https://youtu.be/1ox6LpHwgpo" target="_blank" rel="noreferrer">{t.embassyLink} <Arrow /></a></div>
+            </div>
+            <div className="project-embassy-videos">
+              <figure><iframe src="https://www.youtube-nocookie.com/embed/ocOJJ6dqwx4" title={t.embassyCallFilm} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /><figcaption><span>2021 · Project call</span>{t.embassyCallFilm}</figcaption></figure>
+              <figure><iframe src="https://www.youtube-nocookie.com/embed/1ox6LpHwgpo" title={t.embassyFinalFilm} loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /><figcaption><span>2022 · Final film</span>{t.embassyFinalFilm}</figcaption></figure>
+            </div>
+          </article>
           <article className="project project-earth">
             <div className="project-earth-intro">
               <div><p className="project-earth-kicker">{t.planetKicker}</p><h3>{t.planetTitle}</h3></div>
