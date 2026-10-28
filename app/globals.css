@@ -12,7 +12,7 @@ a { color:inherit; text-decoration:none; }
 nav { display:flex; gap:1.75vw; font-size:11px; text-transform:uppercase; letter-spacing:.12em; }
 nav a { opacity:.75; transition:.2s; } nav a:hover { opacity:1; color:var(--acid); }
 .lang { color:white; background:transparent; border:1px solid rgba(255,255,255,.45); border-radius:50%; width:38px; height:38px; font-size:10px; cursor:pointer; }
-.hero { height:100svh; min-height:700px; position:relative; overflow:hidden; color:white; background:linear-gradient(90deg,rgba(2,9,6,.97) 0%,rgba(2,9,6,.82) 38%,rgba(2,9,6,.12) 70%), url("/og.png") center/cover; }
+.hero { height:100svh; min-height:700px; position:relative; overflow:hidden; color:white; background:linear-gradient(90deg,rgba(2,9,6,.97) 0%,rgba(2,9,6,.84) 37%,rgba(2,9,6,.16) 72%),linear-gradient(0deg,rgba(2,9,6,.3),transparent 42%),url("/neonothopanus-gardneri-hero.jpg") center 52%/cover; }
 .hero-glow { position:absolute; right:8%; bottom:12%; width:32vw; height:32vw; border-radius:50%; background:radial-gradient(circle,rgba(200,255,82,.25),transparent 65%); filter:blur(25px); }
 .hero-content { position:absolute; left:7vw; right:7vw; top:20%; }
 .eyebrow,.kicker { font-size:11px; text-transform:uppercase; letter-spacing:.18em; font-weight:700; }

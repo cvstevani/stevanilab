@@ -16,6 +16,7 @@ const copy = {
     hero: "The living light\nof fungi.",
     intro: "We investigate how fungi make light and how this ancient chemistry can illuminate ecology, biotechnology and new analytical tools.",
     explore: "Explore our research",
+    heroPhoto: "Neonothopanus gardneri mushrooms · Mata dos Cocais, Brazil",
     aboutTitle: "A natural mystery,\nmade visible.",
     about: "For more than three decades, the scientific journey behind StevaniLab has evolved from pure chemistry to the study of living systems and entire ecosystems. It began with peroxyoxalate chemiluminescence, a purely chemical, in vitro system investigated as a fundamental academic problem. During postdoctoral research, the search for a more applied question and for fieldwork led to studies of polymer degradation caused by dragonfly eggs. At the same time, research and field collections of fireflies opened a path toward biological light. During one of those expeditions, the idea arose to investigate bioluminescent mushrooms, beginning a project that would help reveal the ecological function, luciferin, luciferase and mechanism of fungal bioluminescence. Today, this trajectory extends to other bioluminescent systems and environmental metagenomics, connecting chemistry, biodiversity, ecology, biotechnology and new analytical tools through international collaboration.",
     researchTitle: "From molecule to ecosystem",
@@ -55,6 +56,7 @@ const copy = {
     hero: "A luz viva\ndos fungos.",
     intro: "Investigamos como os fungos produzem luz e como essa química ancestral pode iluminar a ecologia, a biotecnologia e novas ferramentas analíticas.",
     explore: "Conheça nossa pesquisa",
+    heroPhoto: "Cogumelos de Neonothopanus gardneri · Mata dos Cocais, Brasil",
     aboutTitle: "Um mistério natural,\nagora visível.",
     about: "Há mais de três décadas, a trajetória científica que deu origem ao StevaniLab evolui da química pura para o estudo de sistemas vivos e ecossistemas inteiros. O trabalho começou com a quimiluminescência do sistema peróxi oxalato, um sistema puramente químico e in vitro, investigado como um problema acadêmico fundamental. Durante o pós doutoramento, a busca por uma questão mais aplicada e pelo trabalho de campo levou ao estudo da degradação de polímeros causada por ovos de libélulas. Ao mesmo tempo, pesquisas e coletas de vagalumes abriram o caminho para o estudo da luz biológica. Em uma dessas expedições surgiu a ideia de investigar cogumelos bioluminescentes, dando início ao projeto que ajudaria a revelar a função ecológica, a luciferina, a luciferase e o mecanismo da bioluminescência de fungos. Hoje, essa trajetória se estende a outros sistemas bioluminescentes e à metagenômica ambiental, conectando química, biodiversidade, ecologia, biotecnologia e novas ferramentas analíticas por meio de colaborações internacionais.",
     researchTitle: "Da molécula ao ecossistema",
@@ -286,7 +288,7 @@ export default function Home() {
           </div>
         </div>
         <img className="hero-seal" src="/stevanilab-logo-white.png" alt="StevaniLab official logo" />
-        <p className="figure-note">Bioluminescent fungi · Visual interpretation</p>
+        <p className="figure-note">{t.heroPhoto}</p>
       </section>
 
       <section className="section about" id="about">
