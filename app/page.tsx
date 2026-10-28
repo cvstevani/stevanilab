@@ -105,7 +105,7 @@ const research = [
 ];
 
 const teamMembers = [
-  { name: "Cassius V. Stevani", photo: "/cassius-v-stevani.png", profile: "/cassius-v-stevani", roleEn: "Principal Investigator", rolePt: "Pesquisador principal", projectEn: "Fungal bioluminescence, environmental chemistry and bioanalytical applications.", projectPt: "Bioluminescência de fungos, química ambiental e aplicações bioanalíticas." },
+  { name: "Cassius V. Stevani", photo: "/cassius-v-stevani-team.jpg", profile: "/cassius-v-stevani", roleEn: "Principal Investigator", rolePt: "Pesquisador principal", projectEn: "Fungal bioluminescence, environmental chemistry and bioanalytical applications.", projectPt: "Bioluminescência de fungos, química ambiental e aplicações bioanalíticas." },
   { name: "Beatriz do Nascimento", roleEn: "Laboratory Technician", rolePt: "Técnica de laboratório", projectEn: "Laboratory operations and technical support.", projectPt: "Operações laboratoriais e suporte técnico.", photo: "/beatriz-do-nascimento.jpg" },
   { name: "Dielle P. Procópio", roleEn: "Postdoctoral Researcher", rolePt: "Pesquisadora de pós-doutorado", projectEn: "Adaptive evolution of Synechocystis sp. PCC6803 that produces PHB, with the goal of improving acetate consumption.", projectPt: "Evolução adaptativa de Synechocystis sp. PCC6803 produtora de PHB para melhor consumo de acetato.", photo: "/dielle-procopio.png" },
   { name: "Carlos Augusto Hruschka Diegues Fogaça", roleEn: "PhD Researcher", rolePt: "Pesquisador de doutorado", projectEn: "Production and development of bioluminescent plants.", projectPt: "Produção e desenvolvimento de plantas bioluminescentes." },
