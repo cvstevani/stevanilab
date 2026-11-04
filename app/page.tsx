@@ -312,7 +312,7 @@ export default function Home() {
         <h2>{t.projectsTitle}</h2>
         <div className="project-grid">
           <article className="project project-lumm"><div className="project-image" /><div className="project-copy"><p>Living database · 130+ species</p><h3>LUMM</h3><p>The Luminescent Mushroom Database connects taxonomy, ecology, morphology, genomics and evolution.</p><a href="https://lumm.uneb.br/en" target="_blank" rel="noreferrer">{t.visit} <Arrow /></a></div></article>
-          <article className="project project-meta"><div className="project-image" /><div className="project-copy"><p>Atlantic Forest · Since 2020</p><h3>Environmental metagenomics</h3><p>Mapping microorganisms and metabolic genes across reservoirs and ancient forest lagoons.</p><a href="/environmental-metagenomics">{t.visit} <Arrow /></a></div></article>
+          <article className="project project-meta"><div className="project-image" /><div className="project-copy"><p>Atlantic Forest · Since 2020</p><h3>Environmental metagenomics</h3><p>Mapping microorganisms and metabolic genes across reservoirs and ancient forest ponds.</p><a href="/environmental-metagenomics">{t.visit} <Arrow /></a></div></article>
           <article className="project project-embassy">
             <div className="project-embassy-intro">
               <div><p className="project-embassy-kicker">{t.embassyKicker}</p><h3>{t.embassyTitle}</h3></div>
