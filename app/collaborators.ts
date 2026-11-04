@@ -8,7 +8,7 @@ export const collaborators = [
   ["Anderson G. de Oliveira", "Chemist · Yeshiva University, USA", "https://www.theoliveiralab.com"],
   ["Patrícia Sartorelli", "Chemist · UNIFESP, Brazil", "https://unifesp.br/prodmais/profile.php?lattesID=6836392358779448"],
   ["Vadim Viviani", "Biologist · UFSCar, Brazil", "https://scholar.google.com/citations?user=1ASG2SgAAAAJ&hl=pt-BR"],
-  ["Lara Urban", "Biologist · Helmholtz Pioneer Campus, Germany", "https://sites.google.com/view/urban-lab?pli=1&authuser=0"],
+  ["Lara Urban", "Biologist · Universität Zürich, Switzerland", "https://sites.google.com/view/urban-lab?pli=1&authuser=0"],
   ["Yuichi Oba", "Biologist · Chubu University, Japan", "https://research-db.chubu.ac.jp/chbhp/KgApp/k03/resid/S002254?lang=en"],
   ["Karen Sarkisyan", "Biologist · Imperial College London, UK", "https://www.designing.bio/team"],
   ["Ilia V. Yampolsky", "Chemist · IBCh RAS, Russia", "https://yampolsky.ibch.ru"],

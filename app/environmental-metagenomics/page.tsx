@@ -24,7 +24,7 @@ const team = [
   ["Douglas M. M. Soares", "UNESP", "https://scholar.google.com/citations?user=u0U0SOcAAAAJ&hl=pt-BR"],
   ["Etelvino J. H. Bechara", "IQ–USP", "https://scholar.google.com.br/citations?user=I4oEyhAAAAAJ&hl=en"],
   ["João C. Setubal", "IQ–USP", "https://www.iq.usp.br/setubal/"],
-  ["Lara Urban", "Helmholtz Pioneer Campus", "https://sites.google.com/view/urban-lab?pli=1&authuser=0"],
+  ["Lara Urban", "Universität Zürich", "https://sites.google.com/view/urban-lab?pli=1&authuser=0"],
   ["Renato S. Freire", "IQ–USP", "https://bv.fapesp.br/en/pesquisador/7677/renato-sanches-freire/"],
   ["Samir V. F. Atum", "Doctoral researcher", "https://scholar.google.com/scholar?q=%22Samir+V.+F.+Atum%22"],
 ] as const;
