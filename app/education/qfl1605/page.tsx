@@ -26,7 +26,7 @@ const modules = [
     place: "CEBIMAR",
     title: "Química do ambiente marinho",
     text: "Explora processos costeiros, parâmetros ambientais e relações entre química, organismos e dinâmica marinha.",
-    status: "Pontos de estudo a definir",
+    status: "Três pontos de estudo definidos",
   },
 ];
 
@@ -41,11 +41,20 @@ const fieldSteps = [
 const collectionSites = [
   ["01", "Rio Ribeira de Iguape", "Sistema fluvial regional"],
   ["02", "Rio Iporanga", "Bacia do Alto Ribeira"],
-  ["03", "Rio Betari", "Núcleo Santana · PETAR"],
-  ["04", "Caverna Santana", "Núcleo Santana · PETAR"],
-  ["05", "Caverna do Couto", "Núcleo Santana · PETAR"],
+  ["03", "Cidade de Iporanga", "Ponto de coleta urbano"],
+  ["04", "Rio Betari", "Núcleo Santana · PETAR"],
+  ["05", "Rio Alambari", "Núcleo Ouro Grosso · PETAR"],
   ["06", "Caverna Alambari de Baixo", "Núcleo Ouro Grosso · PETAR"],
-  ["07", "Caverna do Diabo", "Parque Estadual Caverna do Diabo · Eldorado, SP"],
+  ["07", "Bairro da Serra", "Entorno do Núcleo Santana · PETAR"],
+  ["08", "Caverna Santana", "Núcleo Santana · PETAR"],
+  ["09", "Caverna do Diabo", "Parque Estadual Caverna do Diabo · Eldorado, SP"],
+  ["10", "Caverna do Couto", "Ponto complementar · Núcleo Santana · PETAR"],
+];
+
+const cebimarSites = [
+  ["11", "Praia do Cabelo Gordo", "Ambiente costeiro · CEBIMAR", "https://maps.app.goo.gl/N4Jry6N7BotYAmVb8"],
+  ["12", "Praia do Segredo", "Ambiente costeiro · CEBIMAR", "https://maps.app.goo.gl/QHcfEKePy9yRcb1aA"],
+  ["13", "Canal de São Sebastião", "Sistema costeiro marinho", "https://maps.app.goo.gl/g2q6h5EQAFSVFGv79"],
 ];
 
 const resources = [
@@ -180,7 +189,7 @@ export default function QFL1605Page() {
           <p>Este portal reunirá os roteiros, registros, dados e resultados da disciplina. A estrutura pública será ampliada gradualmente, sempre após revisão e aprovação do conteúdo.</p>
           <div className="qfl-principles">
             <article><strong>3</strong><span>ambientes de estudo</span></article>
-            <article><strong>7</strong><span>locais já mapeados</span></article>
+            <article><strong>13</strong><span>locais de estudo definidos</span></article>
             <article><strong>1</strong><span>percurso integrado</span></article>
           </div>
         </div>
@@ -219,14 +228,36 @@ export default function QFL1605Page() {
       <section className="qfl-section qfl-sites" id="locais">
         <p className="qfl-kicker">04 / Locais de estudo</p>
         <div className="qfl-section-heading">
-          <h2>Uma rede de rios,<br/>cavernas e mar.</h2>
-          <p>Os pontos do CEBIMAR serão incorporados quando a programação de campo estiver definida.</p>
+          <h2>Do Vale do Ribeira<br/>ao Canal de São Sebastião.</h2>
+          <p>Os pontos de estudo conectam rios, cavernas e ambientes costeiros em uma investigação integrada da química ambiental.</p>
         </div>
-        <div className="qfl-site-list">
-          {collectionSites.map(([number, name, place]) => (
-            <article key={number}><span>{number}</span><h3>{name}</h3><p>{place}</p></article>
-          ))}
-          <article className="qfl-site-pending"><span>08</span><h3>CEBIMAR</h3><p>Pontos de estudo em definição</p></article>
+
+        <figure className="qfl-site-map">
+          <a href="/education/qfl1605/bacias-hidrograficas-petar.png" target="_blank" rel="noreferrer" aria-label="Ampliar mapa das bacias hidrográficas e pontos de coleta do PETAR">
+            <img src="/education/qfl1605/bacias-hidrograficas-petar-preview.jpg" alt="Mapa das bacias hidrográficas, drenagens e nove pontos de coleta ao sul do PETAR" />
+          </a>
+          <figcaption>
+            <span>Distribuição das bacias hidrográficas, principais drenagens e pontos de coleta de água ao sul do PETAR. Base cartográfica: Google Satellite. Sistema de referência: SIRGAS 2000, UTM 23S.</span>
+            <a href="/education/qfl1605/bacias-hidrograficas-petar.png" target="_blank" rel="noreferrer">Ampliar mapa ↗</a>
+          </figcaption>
+        </figure>
+
+        <div className="qfl-location-group">
+          <div className="qfl-location-heading"><span>01</span><div><h3>PETAR e Vale do Ribeira</h3><p>Dez pontos de estudo em rios, cavernas e áreas habitadas. Nove deles estão representados no mapa.</p></div></div>
+          <div className="qfl-site-list">
+            {collectionSites.map(([number, name, place]) => (
+              <article key={number}><span>{number}</span><h3>{name}</h3><p>{place}</p></article>
+            ))}
+          </div>
+        </div>
+
+        <div className="qfl-location-group">
+          <div className="qfl-location-heading"><span>02</span><div><h3>CEBIMAR e Canal de São Sebastião</h3><p>Três pontos para o estudo da química do ambiente marinho e costeiro.</p></div></div>
+          <div className="qfl-site-list qfl-site-list-linked">
+            {cebimarSites.map(([number, name, place, url]) => (
+              <a href={url} target="_blank" rel="noreferrer" key={number} aria-label={`Abrir ${name} no Google Maps`}><span>{number}</span><h3>{name}</h3><p>{place}</p><small>Google Maps ↗</small></a>
+            ))}
+          </div>
         </div>
       </section>
 
