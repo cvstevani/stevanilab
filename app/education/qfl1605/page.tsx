@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "QFL1605 · Química Ambiental em Campo | StevaniLab",
@@ -68,20 +67,20 @@ const dashboardLinks = [
 ] as const;
 
 const partners: Array<{ name: string; logo: string; url: string; tone?: "dark"; style?: "planeta" | "usp" }> = [
-  { name: "Pousada das Cavernas", logo: "/education/qfl1605/partners/pousada-das-cavernas.png", url: "https://pousadadascavernas.com.br", tone: "dark" },
-  { name: "Instituto de Química da USP", logo: "/partners/iq-usp.png", url: "https://www.iq.usp.br/portaliqusp/" },
   { name: "CEBIMAR USP", logo: "/education/qfl1605/partners/cebimar.jpg", url: "https://cebimar.usp.br" },
+  { name: "GeoIntegra", logo: "/education/qfl1605/partners/geointegra.jpg", url: "https://geointegra.com.br" },
+  { name: "Instituto de Química da USP", logo: "/partners/iq-usp.png", url: "https://www.iq.usp.br/portaliqusp/" },
   { name: "IPBio", logo: "/education/qfl1605/partners/ipbio.png", url: "https://ipbio.org.br", tone: "dark" },
   { name: "Metrohm", logo: "/education/qfl1605/partners/metrohm.png", url: "https://www.metrohm.com/pt_br.html" },
   { name: "Planeta Trilha", logo: "/education/qfl1605/partners/planeta-trilha.png", url: "https://www.planetatrilha.com.br", style: "planeta" },
+  { name: "Pousada das Cavernas", logo: "/education/qfl1605/partners/pousada-das-cavernas.png", url: "https://pousadadascavernas.com.br", tone: "dark" },
   { name: "Universidade de São Paulo", logo: "/partners/usp-crest.png", url: "https://www5.usp.br", style: "usp" },
-  { name: "GeoIntegra", logo: "/education/qfl1605/partners/geointegra.jpg", url: "https://geointegra.com.br" },
 ];
 
 const instructors = [
-  { name: "Cassius V. Stevani", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/cassius-v-stevani-team.jpg", style: "cassius" },
-  { name: "Renato Sanches Freire", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/education/qfl1605/instructors/renato-sanches-freire.png", style: "renato" },
-  { name: "Guilherme C. Bechara", affiliation: "GeoIntegra", photo: "/education/qfl1605/instructors/guilherme-c-bechara.png", style: "guilherme" },
+  { name: "Cassius V. Stevani", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/cassius-v-stevani-team.jpg", style: "cassius", profile: "/cassius-v-stevani" },
+  { name: "Renato Sanches Freire", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/education/qfl1605/instructors/renato-sanches-freire.png", style: "renato", profile: "https://bv.fapesp.br/pt/pesquisador/7677/renato-sanches-freire/" },
+  { name: "Guilherme C. Bechara", affiliation: "GeoIntegra", photo: "/education/qfl1605/instructors/guilherme-c-bechara.png", style: "guilherme", profile: "https://geointegra.com.br" },
 ];
 
 function PortalIcon({ name }: { name: (typeof dashboardLinks)[number][0] }) {
@@ -97,10 +96,10 @@ export default function QFL1605Page() {
   return (
     <main className="qfl-page">
       <header className="qfl-topbar">
-        <Link href="/" className="brand" aria-label="Voltar ao StevaniLab">
+        <a href="/" className="brand" aria-label="Voltar ao StevaniLab">
           <img className="brand-logo" src="/stevanilab-logo-white.png" alt="" />
           <span className="brand-name">STEVANI<strong>LAB</strong></span>
-        </Link>
+        </a>
         <nav className="qfl-nav" aria-label="Navegação da disciplina">
           <a href="#disciplina">Disciplina</a>
           <a href="#modulos">Módulos</a>
@@ -110,7 +109,7 @@ export default function QFL1605Page() {
         </nav>
         <div className="qfl-top-actions">
           <a className="qfl-teacher" href="https://drive.google.com/drive/folders/19VTN2aGtNBJKqtYcIknyHK9H_wyCw90S" target="_blank" rel="noreferrer">Área docente ↗</a>
-          <Link className="qfl-back" href="/">Voltar ao site</Link>
+          <a className="qfl-back" href="/">Voltar ao site</a>
         </div>
       </header>
 
@@ -154,13 +153,19 @@ export default function QFL1605Page() {
         </div>
         <div className="qfl-instructor-grid">
           {instructors.map((instructor) => (
-            <article key={instructor.name}>
+            <a
+              href={instructor.profile}
+              target={instructor.profile.startsWith("http") ? "_blank" : undefined}
+              rel={instructor.profile.startsWith("http") ? "noreferrer" : undefined}
+              key={instructor.name}
+              aria-label={`Abrir perfil de ${instructor.name}`}
+            >
               <div className={`qfl-instructor-photo qfl-instructor-${instructor.style}`}>
                 <img src={instructor.photo} alt={instructor.name} />
               </div>
               <h3>{instructor.name}</h3>
               <p>{instructor.affiliation}</p>
-            </article>
+            </a>
           ))}
         </div>
       </section>
