@@ -39,23 +39,35 @@ const fieldSteps = [
 ];
 
 const collectionSites = [
-  ["01", "Rio Ribeira de Iguape", "Sistema fluvial regional"],
-  ["02", "Rio Iporanga", "Bacia do Alto Ribeira"],
-  ["03", "Cidade de Iporanga", "Ponto de coleta urbano"],
-  ["04", "Rio Betari", "Núcleo Santana · PETAR"],
-  ["05", "Rio Alambari", "Núcleo Ouro Grosso · PETAR"],
-  ["06", "Caverna Alambari de Baixo", "Núcleo Ouro Grosso · PETAR"],
-  ["07", "Bairro da Serra", "Entorno do Núcleo Santana · PETAR"],
-  ["08", "Caverna Santana", "Núcleo Santana · PETAR"],
-  ["09", "Caverna do Diabo", "Parque Estadual Caverna do Diabo · Eldorado, SP"],
-  ["10", "Caverna do Couto", "Ponto complementar · Núcleo Santana · PETAR"],
-];
+  ["01", "Rio Ribeira de Iguape", "Sistema fluvial regional", "https://maps.app.goo.gl/apq31baAduCFmu4o9"],
+  ["02", "Rio Iporanga", "Bacia do Alto Ribeira", "https://maps.app.goo.gl/ixLHdhnjAoqySwDj7"],
+  ["03", "Cidade de Iporanga", "Ponto de coleta urbano", ""],
+  ["04", "Rio Betari", "Núcleo Santana · PETAR", "https://maps.app.goo.gl/B1UREK1ZDJri74v7A"],
+  ["05", "Rio Alambari", "Núcleo Ouro Grosso · PETAR", ""],
+  ["06", "Caverna Alambari de Baixo", "Núcleo Ouro Grosso · PETAR", "https://maps.app.goo.gl/7n1pN2fpT1v3XcQp8"],
+  ["07", "Bairro da Serra", "Entorno do Núcleo Santana · PETAR", ""],
+  ["08", "Caverna Santana", "Núcleo Santana · PETAR", "https://maps.app.goo.gl/JtsJy2Rki8Wyzczt8"],
+  ["09", "Caverna do Diabo", "PETCV · Eldorado, SP", "https://maps.app.goo.gl/VqA4RqgJW4jeJHz19"],
+  ["10", "Caverna do Couto", "Ponto complementar · Núcleo Santana · PETAR", "https://maps.app.goo.gl/DYH6u8aY8wKLiiMh9"],
+] as const;
 
 const cebimarSites = [
   ["11", "Praia do Cabelo Gordo", "Ambiente costeiro · CEBIMAR", "https://maps.app.goo.gl/N4Jry6N7BotYAmVb8"],
   ["12", "Praia do Segredo", "Ambiente costeiro · CEBIMAR", "https://maps.app.goo.gl/QHcfEKePy9yRcb1aA"],
   ["13", "Canal de São Sebastião", "Sistema costeiro marinho", "https://maps.app.goo.gl/g2q6h5EQAFSVFGv79"],
 ];
+
+const mapPoints = [
+  ["01", "Rio Ribeira de Iguape", "78.1%", "65.2%", "https://maps.app.goo.gl/apq31baAduCFmu4o9"],
+  ["02", "Rio Iporanga", "69.6%", "59.0%", "https://maps.app.goo.gl/ixLHdhnjAoqySwDj7"],
+  ["03", "Iporanga", "66.2%", "71.0%", "#qfl-site-03"],
+  ["04", "Rio Betari", "54.2%", "66.4%", "https://maps.app.goo.gl/B1UREK1ZDJri74v7A"],
+  ["05", "Rio Alambari", "51.4%", "55.2%", "#qfl-site-05"],
+  ["06", "Caverna Alambari de Baixo", "46.7%", "57.0%", "https://maps.app.goo.gl/7n1pN2fpT1v3XcQp8"],
+  ["07", "Bairro da Serra", "41.3%", "58.4%", "#qfl-site-07"],
+  ["08", "Caverna Santana", "35.2%", "49.0%", "https://maps.app.goo.gl/JtsJy2Rki8Wyzczt8"],
+  ["09", "Caverna do Diabo", "97.0%", "40.5%", "https://maps.app.goo.gl/VqA4RqgJW4jeJHz19"],
+] as const;
 
 const resources = [
   ["Caderno de campo", "Roteiros para observação, registro de amostras e anotações durante as atividades."],
@@ -233,20 +245,34 @@ export default function QFL1605Page() {
         </div>
 
         <figure className="qfl-site-map">
-          <a href="/education/qfl1605/bacias-hidrograficas-petar.png" target="_blank" rel="noreferrer" aria-label="Ampliar mapa das bacias hidrográficas e pontos de coleta do PETAR">
-            <img src="/education/qfl1605/bacias-hidrograficas-petar-preview.jpg" alt="Mapa das bacias hidrográficas, drenagens e nove pontos de coleta ao sul do PETAR" />
-          </a>
+          <div className="qfl-site-map-stage">
+            <img src="/education/qfl1605/bacias-hidrograficas-petar-petcv.jpg" alt="Mapa das bacias hidrográficas, drenagens e nove pontos de coleta no PETAR e PETCV" />
+            {mapPoints.map(([number, name, left, top, target]) => (
+              <a
+                className="qfl-map-point"
+                href={target}
+                target={target.startsWith("http") ? "_blank" : undefined}
+                rel={target.startsWith("http") ? "noreferrer" : undefined}
+                style={{ left, top }}
+                key={number}
+                aria-label={target.startsWith("http") ? `Abrir o ponto ${Number(number)}, ${name}, no Google Maps` : `Ir para o ponto ${Number(number)}: ${name}`}
+                title={`${Number(number)}. ${name}`}
+              />
+            ))}
+          </div>
           <figcaption>
-            <span>Distribuição das bacias hidrográficas, principais drenagens e pontos de coleta de água ao sul do PETAR. Base cartográfica: Google Satellite. Sistema de referência: SIRGAS 2000, UTM 23S.</span>
-            <a href="/education/qfl1605/bacias-hidrograficas-petar.png" target="_blank" rel="noreferrer">Ampliar mapa ↗</a>
+            <span>Distribuição das bacias hidrográficas, principais drenagens e pontos de coleta de água no PETAR e no PETCV. Selecione um ponto vermelho para abrir sua localização no Google Maps ou consultar sua descrição. Base cartográfica: Google Satellite. Sistema de referência: SIRGAS 2000, UTM 23S.</span>
           </figcaption>
         </figure>
 
         <div className="qfl-location-group">
-          <div className="qfl-location-heading"><span>01</span><div><h3>PETAR e Vale do Ribeira</h3><p>Dez pontos de estudo em rios, cavernas e áreas habitadas. Nove deles estão representados no mapa.</p></div></div>
+          <div className="qfl-location-heading"><span>01</span><div><h3>PETAR, PETCV e Vale do Ribeira</h3><p>Dez pontos de estudo em rios, cavernas e áreas habitadas. Nove deles estão representados no mapa interativo.</p></div></div>
           <div className="qfl-site-list">
-            {collectionSites.map(([number, name, place]) => (
-              <article key={number}><span>{number}</span><h3>{name}</h3><p>{place}</p></article>
+            {collectionSites.map(([number, name, place, url]) => (
+              <article id={`qfl-site-${number}`} key={number}>
+                <span>{number}</span><h3>{name}</h3><p>{place}</p>
+                {url && <a className="qfl-site-card-link" href={url} target="_blank" rel="noreferrer">Google Maps ↗</a>}
+              </article>
             ))}
           </div>
         </div>
