@@ -2,14 +2,22 @@
 
 import { useState } from "react";
 import Script from "next/script";
-import Link from "next/link";
 import { newsPosts } from "./news-posts";
 import { JournalCovers } from "./journal-covers";
 import { sortedCollaborators } from "./collaborators";
 
 type Lang = "en" | "pt";
 
-const nav = ["about", "research", "projects", "team", "publications", "media", "collaborators", "contact"];
+const nav = [
+  { id: "about", en: "About", pt: "Sobre" },
+  { id: "research", en: "Research", pt: "Pesquisa" },
+  { id: "projects", en: "Projects", pt: "Projetos" },
+  { id: "team", en: "Team", pt: "Equipe" },
+  { id: "publications", en: "Publications", pt: "Publicações" },
+  { id: "media", en: "Media", pt: "Mídia" },
+  { id: "collaborators", en: "Collaborators", pt: "Colaboradores" },
+  { id: "contact", en: "Contact", pt: "Contato" },
+];
 
 const copy = {
   en: {
@@ -270,11 +278,11 @@ export default function Home() {
           <img className="brand-logo" src="/stevanilab-logo-white.png" alt="" />
           <span className="brand-name">STEVANI<strong>LAB</strong></span>
         </a>
-        <nav aria-label="Section navigation">
-          {nav.map((item) => <a key={item} href={`#${item}`}>{item === "publications" ? "Publications" : item[0].toUpperCase() + item.slice(1)}</a>)}
-          <Link href="/education/qfl1605">{lang === "en" ? "Education" : "Ensino"}</Link>
+        <nav aria-label={lang === "en" ? "Section navigation" : "Navegação por seções"}>
+          {nav.map((item) => <a key={item.id} href={`#${item.id}`}>{item[lang]}</a>)}
         </nav>
-        <button className="lang" onClick={() => setLang(lang === "en" ? "pt" : "en")} aria-label="Switch language">{lang === "en" ? "PT" : "EN"}</button>
+        <a className="education-link" href="/education/qfl1605">{lang === "en" ? "Education" : "Educação"}</a>
+        <button className="lang" onClick={() => setLang(lang === "en" ? "pt" : "en")} aria-label={lang === "en" ? "Mudar idioma para português" : "Switch language to English"}>{lang === "en" ? "PT" : "EN"}</button>
       </header>
 
       <section className="hero" id="top">

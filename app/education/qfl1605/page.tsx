@@ -67,6 +67,23 @@ const dashboardLinks = [
   ["chart", "Resultados e relatórios", "Gráficos, comparações e publicações", "#recursos"],
 ] as const;
 
+const partners: Array<{ name: string; logo: string; url: string; tone?: "dark"; style?: "planeta" | "usp" }> = [
+  { name: "Pousada das Cavernas", logo: "/education/qfl1605/partners/pousada-das-cavernas.png", url: "https://pousadadascavernas.com.br", tone: "dark" },
+  { name: "Instituto de Química da USP", logo: "/partners/iq-usp.png", url: "https://www.iq.usp.br/portaliqusp/" },
+  { name: "CEBIMAR USP", logo: "/education/qfl1605/partners/cebimar.jpg", url: "https://cebimar.usp.br" },
+  { name: "IPBio", logo: "/education/qfl1605/partners/ipbio.png", url: "https://ipbio.org.br", tone: "dark" },
+  { name: "Metrohm", logo: "/education/qfl1605/partners/metrohm.png", url: "https://www.metrohm.com/pt_br.html" },
+  { name: "Planeta Trilha", logo: "/education/qfl1605/partners/planeta-trilha.png", url: "https://www.planetatrilha.com.br", style: "planeta" },
+  { name: "Universidade de São Paulo", logo: "/partners/usp-crest.png", url: "https://www5.usp.br", style: "usp" },
+  { name: "GeoIntegra", logo: "/education/qfl1605/partners/geointegra.jpg", url: "https://geointegra.com.br" },
+];
+
+const instructors = [
+  { name: "Cassius V. Stevani", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/cassius-v-stevani-team.jpg", style: "cassius" },
+  { name: "Renato Sanches Freire", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/education/qfl1605/instructors/renato-sanches-freire.png", style: "renato" },
+  { name: "Guilherme C. Bechara", affiliation: "GeoIntegra", photo: "/education/qfl1605/instructors/guilherme-c-bechara.png", style: "guilherme" },
+];
+
 function PortalIcon({ name }: { name: (typeof dashboardLinks)[number][0] }) {
   if (name === "book") return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5a3 3 0 0 1 3-1.2c2 0 3.7.8 5 2.2v13c-1.3-1.4-3-2.2-5-2.2a3 3 0 0 0-3 1.2zM20 5.5a3 3 0 0 0-3-1.2c-2 0-3.7.8-5 2.2v13c1.3-1.4 3-2.2 5-2.2a3 3 0 0 1 3 1.2z"/></svg>;
   if (name === "database") return <svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>;
@@ -89,6 +106,7 @@ export default function QFL1605Page() {
           <a href="#modulos">Módulos</a>
           <a href="#locais">Locais</a>
           <a href="#recursos">Recursos</a>
+          <a href="#parceiros">Parceiros</a>
         </nav>
         <div className="qfl-top-actions">
           <a className="qfl-teacher" href="https://drive.google.com/drive/folders/19VTN2aGtNBJKqtYcIknyHK9H_wyCw90S" target="_blank" rel="noreferrer">Área docente ↗</a>
@@ -106,15 +124,15 @@ export default function QFL1605Page() {
 
           <div className="qfl-environment-grid" aria-label="Ambientes de estudo">
             <a className="qfl-environment-card" href="#modulos">
-              <div className="qfl-environment-visual qfl-environment-visual-petar" role="img" aria-label="Mata Atlântica no Vale do Ribeira" />
+              <div className="qfl-environment-visual qfl-environment-visual-petar" role="img" aria-label="Rio em área de Mata Atlântica no PETAR" />
               <div><h2>PETAR</h2><p>Águas continentais, cavernas, química ambiental e educação</p></div>
             </a>
             <a className="qfl-environment-card" href="#modulos">
-              <div className="qfl-environment-visual qfl-environment-visual-diabo" role="img" aria-label="Representação de uma caverna no Parque Estadual Caverna do Diabo" />
+              <div className="qfl-environment-visual qfl-environment-visual-diabo" role="img" aria-label="Interior da Caverna do Diabo" />
               <div><h2>Caverna do Diabo</h2><p>Parque Estadual Caverna do Diabo · Eldorado, SP</p></div>
             </a>
             <a className="qfl-environment-card" href="#modulos">
-              <div className="qfl-environment-visual qfl-environment-visual-cebimar" role="img" aria-label="Representação da costa marinha estudada no CEBIMAR"><span className="qfl-sea-sun"/><span className="qfl-sea-land"/><span className="qfl-sea-shore"/></div>
+              <div className="qfl-environment-visual qfl-environment-visual-cebimar" role="img" aria-label="Ambiente costeiro associado ao CEBIMAR" />
               <div><h2>CEBIMAR</h2><p>Química marinha, águas costeiras e análises ambientais</p></div>
             </a>
           </div>
@@ -126,6 +144,24 @@ export default function QFL1605Page() {
             ))}
           </nav>
           <a className="qfl-dashboard-down" href="#disciplina" aria-label="Continuar para a apresentação da disciplina">↓</a>
+        </div>
+      </section>
+
+      <section className="qfl-section qfl-instructors" aria-labelledby="qfl-instructors-title">
+        <div className="qfl-instructors-heading">
+          <p className="qfl-kicker">Docentes</p>
+          <h2 id="qfl-instructors-title">Quem conduz<br/>a disciplina.</h2>
+        </div>
+        <div className="qfl-instructor-grid">
+          {instructors.map((instructor) => (
+            <article key={instructor.name}>
+              <div className={`qfl-instructor-photo qfl-instructor-${instructor.style}`}>
+                <img src={instructor.photo} alt={instructor.name} />
+              </div>
+              <h3>{instructor.name}</h3>
+              <p>{instructor.affiliation}</p>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -205,6 +241,28 @@ export default function QFL1605Page() {
       <section className="qfl-section qfl-governance" id="publicacao">
         <div><p className="qfl-kicker">06 / Publicação responsável</p><h2>Aprender também é cuidar dos dados.</h2></div>
         <div><p>Registros de campo, avaliações, comentários e trabalhos de estudantes não serão publicados automaticamente. Todo material passará por revisão acadêmica e autorização antes de aparecer nesta área.</p><p>Comentários críticos legítimos poderão contribuir para o aprimoramento da disciplina. Conteúdo ofensivo ou dados pessoais permanecerão fora da área pública.</p></div>
+      </section>
+
+      <section className="qfl-section qfl-partners" id="parceiros">
+        <p className="qfl-kicker">07 / Parceiros e colaboradores</p>
+        <div className="qfl-section-heading">
+          <h2>Conhecimento construído<br/>em colaboração.</h2>
+          <p>Instituições e empresas que apoiam as atividades acadêmicas, científicas e de campo da QFL1605.</p>
+        </div>
+        <div className="qfl-partner-grid">
+          {partners.map((partner) => (
+            <a
+              className={[partner.tone === "dark" ? "qfl-partner-dark" : "", partner.style ? `qfl-partner-${partner.style}` : ""].filter(Boolean).join(" ")}
+              href={partner.url}
+              target="_blank"
+              rel="noreferrer"
+              key={partner.name}
+            >
+              <img src={partner.logo} alt={`Logo ${partner.name}`} />
+              <span>{partner.name}</span>
+            </a>
+          ))}
+        </div>
       </section>
 
       <footer className="qfl-footer">
