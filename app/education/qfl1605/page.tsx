@@ -57,6 +57,12 @@ const cebimarSites = [
   ["13", "Canal de São Sebastião", "Sistema costeiro marinho", "https://maps.app.goo.gl/g2q6h5EQAFSVFGv79"],
 ];
 
+const cebimarMapPoints = [
+  ["11", "Praia do Cabelo Gordo", "39.4%", "36.7%", "https://maps.app.goo.gl/N4Jry6N7BotYAmVb8"],
+  ["12", "Praia do Segredo", "46.6%", "23.6%", "https://maps.app.goo.gl/QHcfEKePy9yRcb1aA"],
+  ["13", "Canal de São Sebastião", "71.9%", "44.6%", "https://maps.app.goo.gl/g2q6h5EQAFSVFGv79"],
+] as const;
+
 const mapPoints = [
   ["01", "Rio Ribeira de Iguape", "78.1%", "65.2%", "https://maps.app.goo.gl/apq31baAduCFmu4o9"],
   ["02", "Rio Iporanga", "69.6%", "59.0%", "https://maps.app.goo.gl/ixLHdhnjAoqySwDj7"],
@@ -78,11 +84,34 @@ const resources = [
   ["Relatórios e resultados", "Sínteses produzidas ao longo da disciplina após avaliação e autorização."],
 ];
 
+const evaluationForm = "https://docs.google.com/forms/d/e/1FAIpQLSdB-F5R4XH7b5dVg7VQf9N_B90FV82CQlwrY4MtpX2RuvaPQw/viewform";
+
+const evaluationAudiences = [
+  {
+    number: "01",
+    title: "Estudantes",
+    titleEn: "Students",
+    text: "Avalie a organização, a integração entre campo e laboratório, o aprendizado e as orientações recebidas.",
+  },
+  {
+    number: "02",
+    title: "Guias e monitores",
+    titleEn: "Guides and monitors",
+    text: "Compartilhe sua percepção sobre a atividade, a comunicação, a segurança e a relação com o território.",
+  },
+  {
+    number: "03",
+    title: "Turistas e visitantes",
+    titleEn: "Tourists and visitors",
+    text: "Conte como foi sua experiência e ajude a aprimorar os materiais e as ações de educação ambiental.",
+  },
+];
+
 const dashboardLinks = [
   ["book", "Caderno de atividades", "Protocolos de campo e laboratório", "#recursos"],
   ["database", "Dados ambientais", "Coletas, análises e resultados", "#locais"],
   ["education", "Materiais educativos", "Recursos para estudantes, escolas, guias e visitantes", "#recursos"],
-  ["clipboard", "Avaliações", "Questionários e contribuições", "#publicacao"],
+  ["clipboard", "Avaliações", "Questionários e contribuições", "#avaliacoes"],
   ["location", "Locais de coleta", "Mapas e pontos de amostragem", "#locais"],
   ["chart", "Resultados e relatórios", "Gráficos, comparações e publicações", "#recursos"],
 ] as const;
@@ -126,6 +155,7 @@ export default function QFL1605Page() {
           <a href="#modulos">Módulos</a>
           <a href="#locais">Locais</a>
           <a href="#recursos">Recursos</a>
+          <a href="#avaliacoes">Avaliações</a>
           <a href="#parceiros">Parceiros</a>
         </nav>
         <div className="qfl-top-actions">
@@ -279,6 +309,24 @@ export default function QFL1605Page() {
 
         <div className="qfl-location-group">
           <div className="qfl-location-heading"><span>02</span><div><h3>CEBIMAR e Canal de São Sebastião</h3><p>Três pontos para o estudo da química do ambiente marinho e costeiro.</p></div></div>
+          <figure className="qfl-site-map qfl-cebimar-map">
+            <div className="qfl-site-map-stage">
+              <img src="/education/qfl1605/cebimar-locais.jpg" alt="Imagem de satélite com os três locais de estudo no CEBIMAR e no Canal de São Sebastião" />
+              {cebimarMapPoints.map(([number, name, left, top, url]) => (
+                <a
+                  className="qfl-map-point qfl-cebimar-map-point"
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ left, top }}
+                  key={number}
+                  aria-label={`Abrir ${name} no Google Maps`}
+                  title={`${number}. ${name}`}
+                />
+              ))}
+            </div>
+            <figcaption><span>Praia do Cabelo Gordo, Praia do Segredo e Canal de São Sebastião. Selecione somente um dos marcadores para abrir sua localização no Google Maps.</span></figcaption>
+          </figure>
           <div className="qfl-site-list qfl-site-list-linked">
             {cebimarSites.map(([number, name, place, url]) => (
               <a href={url} target="_blank" rel="noreferrer" key={number} aria-label={`Abrir ${name} no Google Maps`}><span>{number}</span><h3>{name}</h3><p>{place}</p><small>Google Maps ↗</small></a>
@@ -300,13 +348,41 @@ export default function QFL1605Page() {
         </div>
       </section>
 
+      <section className="qfl-section qfl-evaluations" id="avaliacoes">
+        <p className="qfl-kicker">06 / Avaliações</p>
+        <div className="qfl-section-heading">
+          <h2>Escutar para<br/>aprimorar.</h2>
+          <div className="qfl-evaluation-intro">
+            <p>O questionário é bilíngue e aceita respostas em português ou inglês. Selecione seu perfil dentro do formulário e avalie a atividade realizada.</p>
+            <p>A identificação é opcional. As respostas serão analisadas de forma agregada e comentários só poderão aparecer publicamente após revisão.</p>
+          </div>
+        </div>
+        <div className="qfl-evaluation-grid">
+          {evaluationAudiences.map((audience) => (
+            <article key={audience.number}>
+              <span>{audience.number}</span>
+              <div>
+                <h3>{audience.title}</h3>
+                <small>{audience.titleEn}</small>
+                <p>{audience.text}</p>
+              </div>
+              <a href={evaluationForm} target="_blank" rel="noreferrer">Responder avaliação ↗</a>
+            </article>
+          ))}
+        </div>
+        <div className="qfl-evaluation-note">
+          <strong>Privacidade e uso responsável</strong>
+          <p>O formulário não inclui o endereço de e mail nem a Conta Google na resposta. Os dados ficam em uma planilha privada, destinada à avaliação acadêmica e ao aprimoramento da disciplina.</p>
+        </div>
+      </section>
+
       <section className="qfl-section qfl-governance" id="publicacao">
-        <div><p className="qfl-kicker">06 / Publicação responsável</p><h2>Aprender também é cuidar dos dados.</h2></div>
+        <div><p className="qfl-kicker">07 / Publicação responsável</p><h2>Aprender também é cuidar dos dados.</h2></div>
         <div><p>Registros de campo, avaliações, comentários e trabalhos de estudantes não serão publicados automaticamente. Todo material passará por revisão acadêmica e autorização antes de aparecer nesta área.</p><p>Comentários críticos legítimos poderão contribuir para o aprimoramento da disciplina. Conteúdo ofensivo ou dados pessoais permanecerão fora da área pública.</p></div>
       </section>
 
       <section className="qfl-section qfl-partners" id="parceiros">
-        <p className="qfl-kicker">07 / Parceiros e colaboradores</p>
+        <p className="qfl-kicker">08 / Parceiros e colaboradores</p>
         <div className="qfl-section-heading">
           <h2>Conhecimento construído<br/>em colaboração.</h2>
           <p>Instituições e empresas que apoiam as atividades acadêmicas, científicas e de campo da QFL1605.</p>
