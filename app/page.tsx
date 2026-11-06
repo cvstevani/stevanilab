@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Script from "next/script";
+import Link from "next/link";
 import { newsPosts } from "./news-posts";
 import { JournalCovers } from "./journal-covers";
 import { sortedCollaborators } from "./collaborators";
@@ -271,6 +272,7 @@ export default function Home() {
         </a>
         <nav aria-label="Section navigation">
           {nav.map((item) => <a key={item} href={`#${item}`}>{item === "publications" ? "Publications" : item[0].toUpperCase() + item.slice(1)}</a>)}
+          <Link href="/education/qfl1605">{lang === "en" ? "Education" : "Ensino"}</Link>
         </nav>
         <button className="lang" onClick={() => setLang(lang === "en" ? "pt" : "en")} aria-label="Switch language">{lang === "en" ? "PT" : "EN"}</button>
       </header>
