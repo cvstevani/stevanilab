@@ -84,26 +84,34 @@ const resources = [
   ["Relatórios e resultados", "Sínteses produzidas ao longo da disciplina após avaliação e autorização."],
 ];
 
-const evaluationForm = "https://docs.google.com/forms/d/e/1FAIpQLSdB-F5R4XH7b5dVg7VQf9N_B90FV82CQlwrY4MtpX2RuvaPQw/viewform";
-
 const evaluationAudiences = [
   {
     number: "01",
-    title: "Estudantes",
-    titleEn: "Students",
-    text: "Avalie a organização, a integração entre campo e laboratório, o aprendizado e as orientações recebidas.",
+    title: "Alunos da QFL1605",
+    language: "Português",
+    text: "Avalie todas as atividades e locais da disciplina, incluindo a relação entre os conteúdos estudados em sala e as observações de campo.",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSdB-F5R4XH7b5dVg7VQf9N_B90FV82CQlwrY4MtpX2RuvaPQw/viewform",
   },
   {
     number: "02",
-    title: "Guias e monitores",
-    titleEn: "Guides and monitors",
-    text: "Compartilhe sua percepção sobre a atividade, a comunicação, a segurança e a relação com o território.",
+    title: "Guias e monitores do PETAR",
+    language: "Português",
+    text: "Avalie as ações de formação no Núcleo Santana, a visitação noturna e a aplicação dos conhecimentos científicos durante as visitas.",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLScjQKLvgnsdVlmlprsjjt_8M632nowl7QY4BKEopbriPdOH1Q/viewform",
   },
   {
     number: "03",
+    title: "Estudantes de escolas",
+    language: "Português",
+    text: "Avalie as atividades educativas no PETAR de acordo com sua etapa de ensino e conte o que aprendeu sobre ciência e conservação.",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSdeHVUkzW7ZhZ-NNTTJXSzRPytwDsZvSpFyhyPAgm_w7HS1Og/viewform",
+  },
+  {
+    number: "04",
     title: "Turistas e visitantes",
-    titleEn: "Tourists and visitors",
-    text: "Conte como foi sua experiência e ajude a aprimorar os materiais e as ações de educação ambiental.",
+    language: "Português / English",
+    text: "Conte como foi sua experiência educativa nas cavernas e na visitação noturna. Este é o único formulário disponível também em inglês.",
+    url: "https://docs.google.com/forms/d/e/1FAIpQLSeBA9f1F2QG2xKY0Ku5LTcJw3QJqn8_KhP1aZ4XXgTlwOLYWg/viewform",
   },
 ];
 
@@ -353,7 +361,7 @@ export default function QFL1605Page() {
         <div className="qfl-section-heading">
           <h2>Escutar para<br/>aprimorar.</h2>
           <div className="qfl-evaluation-intro">
-            <p>O questionário é bilíngue e aceita respostas em português ou inglês. Selecione seu perfil dentro do formulário e avalie a atividade realizada.</p>
+            <p>Há formulários específicos para cada público. Os formulários de alunos, estudantes de escolas, guias e monitores estão em português. Somente o formulário para turistas e visitantes é bilíngue.</p>
             <p>A identificação é opcional. As respostas serão analisadas de forma agregada e comentários só poderão aparecer publicamente após revisão.</p>
           </div>
         </div>
@@ -363,10 +371,10 @@ export default function QFL1605Page() {
               <span>{audience.number}</span>
               <div>
                 <h3>{audience.title}</h3>
-                <small>{audience.titleEn}</small>
+                <small>{audience.language}</small>
                 <p>{audience.text}</p>
               </div>
-              <a href={evaluationForm} target="_blank" rel="noreferrer">Responder avaliação ↗</a>
+              <a href={audience.url} target="_blank" rel="noreferrer">Responder avaliação ↗</a>
             </article>
           ))}
         </div>

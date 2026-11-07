@@ -256,6 +256,7 @@ function makeAltmetricScoresReadable() {
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("en");
+  const [menuOpen, setMenuOpen] = useState(false);
   const t = copy[lang];
 
   return (
@@ -278,10 +279,24 @@ export default function Home() {
           <img className="brand-logo" src="/stevanilab-logo-white.png" alt="" />
           <span className="brand-name">STEVANI<strong>LAB</strong></span>
         </a>
-        <nav aria-label={lang === "en" ? "Section navigation" : "Navegação por seções"}>
-          {nav.map((item) => <a key={item.id} href={`#${item.id}`}>{item[lang]}</a>)}
-        </nav>
-        <a className="education-link" href="/education/qfl1605">{lang === "en" ? "Education" : "Educação"}</a>
+        <div className={`topbar-nav-group${menuOpen ? " is-open" : ""}`} id="site-navigation">
+          <nav aria-label={lang === "en" ? "Section navigation" : "Navegação por seções"}>
+            {nav.map((item) => <a key={item.id} href={`#${item.id}`} onClick={() => setMenuOpen(false)}>{item[lang]}</a>)}
+          </nav>
+          <a className="education-link" href="/education/qfl1605" onClick={() => setMenuOpen(false)}>{lang === "en" ? "Education" : "Educação"}</a>
+        </div>
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-controls="site-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? (lang === "en" ? "Close menu" : "Fechar menu") : (lang === "en" ? "Open menu" : "Abrir menu")}
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
         <button className="lang" onClick={() => setLang(lang === "en" ? "pt" : "en")} aria-label={lang === "en" ? "Mudar idioma para português" : "Switch language to English"}>{lang === "en" ? "PT" : "EN"}</button>
       </header>
 

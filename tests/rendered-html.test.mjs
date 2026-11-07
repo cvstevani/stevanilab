@@ -6,8 +6,12 @@ const pageUrl = new URL("../app/education/qfl1605/page.tsx", import.meta.url);
 const cssUrl = new URL("../app/globals.css", import.meta.url);
 const publicUrl = new URL("../public/", import.meta.url);
 
-const formUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLSdB-F5R4XH7b5dVg7VQf9N_B90FV82CQlwrY4MtpX2RuvaPQw/viewform";
+const formUrls = [
+  "https://docs.google.com/forms/d/e/1FAIpQLSdB-F5R4XH7b5dVg7VQf9N_B90FV82CQlwrY4MtpX2RuvaPQw/viewform",
+  "https://docs.google.com/forms/d/e/1FAIpQLScjQKLvgnsdVlmlprsjjt_8M632nowl7QY4BKEopbriPdOH1Q/viewform",
+  "https://docs.google.com/forms/d/e/1FAIpQLSdeHVUkzW7ZhZ-NNTTJXSzRPytwDsZvSpFyhyPAgm_w7HS1Og/viewform",
+  "https://docs.google.com/forms/d/e/1FAIpQLSeBA9f1F2QG2xKY0Ku5LTcJw3QJqn8_KhP1aZ4XXgTlwOLYWg/viewform",
+];
 
 test("preserves the implemented QFL1605 modules", async () => {
   const page = await readFile(pageUrl, "utf8");
@@ -32,13 +36,15 @@ test("preserves the implemented QFL1605 modules", async () => {
   assert.match(page, /partners\.map/);
 });
 
-test("connects the evaluation area to the published bilingual form", async () => {
+test("connects each audience to its specific evaluation form", async () => {
   const page = await readFile(pageUrl, "utf8");
 
-  assert.ok(page.includes(formUrl));
-  assert.match(page, /Estudantes/);
-  assert.match(page, /Guias e monitores/);
+  for (const formUrl of formUrls) assert.ok(page.includes(formUrl));
+  assert.match(page, /Alunos da QFL1605/);
+  assert.match(page, /Guias e monitores do PETAR/);
+  assert.match(page, /Estudantes de escolas/);
   assert.match(page, /Turistas e visitantes/);
+  assert.match(page, /Somente o formulário para turistas e visitantes é bilíngue/);
   assert.match(page, /Responder avaliação/);
   assert.match(page, /A identificação é opcional/);
   assert.match(page, /planilha privada/);
