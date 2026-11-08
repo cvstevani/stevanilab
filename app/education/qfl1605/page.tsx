@@ -115,7 +115,7 @@ const partners: Array<{ name: string; logo: string; url: string; tone?: "dark"; 
 
 const instructors = [
   { name: "Cassius V. Stevani", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/cassius-v-stevani-team.jpg", style: "cassius", profile: "/cassius-v-stevani" },
-  { name: "Renato Sanches Freire", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/education/qfl1605/instructors/renato-sanches-freire.png", style: "renato", profile: "https://bv.fapesp.br/pt/pesquisador/7677/renato-sanches-freire/" },
+  { name: "Renato S. Freire", affiliation: "Instituto de Química · Universidade de São Paulo", photo: "/education/qfl1605/instructors/renato-sanches-freire.png", style: "renato", profile: "https://bv.fapesp.br/pt/pesquisador/7677/renato-sanches-freire/" },
   { name: "Guilherme C. Bechara", affiliation: "GeoIntegra", photo: "/education/qfl1605/instructors/guilherme-c-bechara.png", style: "guilherme", profile: "https://geointegra.com.br" },
 ];
 
@@ -167,7 +167,7 @@ export default function QFL1605Page() {
               <div className="qfl-environment-visual qfl-environment-visual-diabo" role="img" aria-label="Interior da Caverna do Diabo" />
               <div><h2>Caverna do Diabo</h2><p>Parque Estadual Caverna do Diabo · Eldorado, SP</p></div>
             </a>
-            <a className="qfl-environment-card" href="#modulos">
+            <a className="qfl-environment-card" href="#mapa-cebimar">
               <div className="qfl-environment-visual qfl-environment-visual-cebimar" role="img" aria-label="Ambiente costeiro associado ao CEBIMAR" />
               <div><h2>CEBIMAR</h2><p>Química marinha, águas costeiras e análises ambientais</p></div>
             </a>
@@ -272,8 +272,8 @@ export default function QFL1605Page() {
           </figcaption>
         </figure>
 
-        <div className="qfl-location-group">
-          <div className="qfl-location-heading"><span>02</span><div><h3>CEBIMAR e Canal de São Sebastião</h3><p>Selecione um dos três marcadores para abrir diretamente sua localização no Google Maps.</p></div></div>
+        <div className="qfl-location-group" id="mapa-cebimar">
+          <div className="qfl-location-heading qfl-cebimar-heading"><div><h3>CEBIMAR e Canal de São Sebastião</h3><p>Selecione um dos três marcadores para abrir diretamente sua localização no Google Maps.</p></div></div>
           <figure className="qfl-site-map qfl-cebimar-map">
             <div className="qfl-site-map-stage">
               <img src="/education/qfl1605/cebimar-locais.jpg" alt="Imagem de satélite com os três locais de estudo no CEBIMAR e no Canal de São Sebastião" />
