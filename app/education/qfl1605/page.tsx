@@ -40,9 +40,10 @@ const fieldSteps = [
 ];
 
 const cebimarMapPoints = [
-  ["11", "Praia do Cabelo Gordo", "39.4%", "36.7%", "https://maps.app.goo.gl/N4Jry6N7BotYAmVb8"],
-  ["12", "Praia do Segredo", "46.6%", "23.6%", "https://maps.app.goo.gl/QHcfEKePy9yRcb1aA"],
-  ["13", "Canal de São Sebastião", "71.9%", "44.6%", "https://maps.app.goo.gl/g2q6h5EQAFSVFGv79"],
+  ["10", "Centro de Biologia Marinha da USP", "30%", "25%", "24%", "18%", "https://www.google.com/maps/search/?api=1&query=Centro+de+Biologia+Marinha+da+Universidade+de+S%C3%A3o+Paulo"],
+  ["11", "Praia do Cabelo Gordo", "39.4%", "39%", "22%", "14%", "https://maps.app.goo.gl/N4Jry6N7BotYAmVb8"],
+  ["12", "Praia do Segredo", "46.6%", "25.5%", "19%", "14%", "https://maps.app.goo.gl/QHcfEKePy9yRcb1aA"],
+  ["13", "Canal de São Sebastião", "75%", "52%", "30%", "18%", "https://maps.app.goo.gl/g2q6h5EQAFSVFGv79"],
 ] as const;
 
 const mapPoints = [
@@ -273,24 +274,24 @@ export default function QFL1605Page() {
         </figure>
 
         <div className="qfl-location-group" id="mapa-cebimar">
-          <div className="qfl-location-heading qfl-cebimar-heading"><div><h3>CEBIMAR e Canal de São Sebastião</h3><p>Selecione um dos três marcadores para abrir diretamente sua localização no Google Maps.</p></div></div>
+          <div className="qfl-location-heading qfl-cebimar-heading"><div><h3>CEBIMAR e Canal de São Sebastião</h3><p>Selecione um dos quatro locais identificados no mapa para abrir diretamente sua localização no Google Maps.</p></div></div>
           <figure className="qfl-site-map qfl-cebimar-map">
             <div className="qfl-site-map-stage">
               <img src="/education/qfl1605/cebimar-locais.jpg" alt="Imagem de satélite com os três locais de estudo no CEBIMAR e no Canal de São Sebastião" />
-              {cebimarMapPoints.map(([number, name, left, top, url]) => (
+              {cebimarMapPoints.map(([number, name, left, top, width, height, url]) => (
                 <a
                   className="qfl-map-point qfl-cebimar-map-point"
                   href={url}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ left, top }}
+                  style={{ left, top, width, height }}
                   key={number}
                   aria-label={`Abrir ${name} no Google Maps`}
                   title={`${number}. ${name}`}
                 />
               ))}
             </div>
-            <figcaption><span>Praia do Cabelo Gordo, Praia do Segredo e Canal de São Sebastião. Selecione somente um dos marcadores para abrir sua localização no Google Maps.</span></figcaption>
+            <figcaption><span>Centro de Biologia Marinha da USP, Praia do Cabelo Gordo, Praia do Segredo e Canal de São Sebastião. Selecione um dos locais para abrir sua localização no Google Maps.</span></figcaption>
           </figure>
         </div>
       </section>

@@ -27,6 +27,8 @@ test("preserves the implemented QFL1605 modules", async () => {
   assert.match(page, /CEBIMAR/);
   assert.match(page, /mapPoints\.map/);
   assert.match(page, /cebimarMapPoints\.map/);
+  assert.match(page, /Centro de Biologia Marinha da USP/);
+  assert.match(page, /quatro locais identificados no mapa/);
   assert.match(page, /partners\.map/);
 });
 
