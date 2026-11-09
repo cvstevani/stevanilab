@@ -1,6 +1,6 @@
 const COOKIE_MAX_AGE = 60 * 60 * 12;
 
-type Scope = "workspace" | "evaluations";
+type Scope = "workspace" | "evaluations" | "admin";
 
 const scopeConfig = {
   workspace: {
@@ -11,10 +11,14 @@ const scopeConfig = {
     codeVariable: "QFL1605_EVALUATION_CODE",
     cookie: "qfl1605_evaluations",
   },
+  admin: {
+    codeVariable: "QFL1605_ADMIN_CODE",
+    cookie: "qfl1605_admin",
+  },
 } as const;
 
 function isScope(value: unknown): value is Scope {
-  return value === "workspace" || value === "evaluations";
+  return value === "workspace" || value === "evaluations" || value === "admin";
 }
 
 function constantTimeEqual(a: string, b: string) {
@@ -53,6 +57,14 @@ function protectedResources(scope: Scope) {
   if (scope === "workspace") {
     const url = process.env.QFL1605_WORKSPACE_URL;
     return url ? [{ title: "Área de trabalho da QFL1605", url }] : [];
+  }
+
+  if (scope === "admin") {
+    return [
+      ["Pasta principal da QFL1605", process.env.QFL1605_ADMIN_FOLDER_URL ?? "https://drive.google.com/open?id=19VTN2aGtNBJKqtYcIknyHK9H_wyCw90S&usp=drive_fs"],
+      ["Pasta de avaliações", process.env.QFL1605_EVALUATIONS_FOLDER_URL ?? "https://drive.google.com/open?id=1C5G7Qwi1Ypd-IDANYrvLTpPNynvTvQZL&usp=drive_fs"],
+      ["Protótipo do aplicativo", "/education/qfl1605/prototipo"],
+    ].map(([title, url]) => ({ title, url }));
   }
 
   return [

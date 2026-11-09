@@ -98,7 +98,7 @@ const dashboardLinks = [
   ["book", "Caderno de atividades", "Acesso exclusivo para alunos e professores", "/education/qfl1605/acesso"],
   ["database", "Dados ambientais", "Coletas, análises e resultados", "#locais"],
   ["education", "Materiais educativos", "Recursos para estudantes, escolas, guias e visitantes", "#recursos"],
-  ["clipboard", "Avaliações", "Acesso por código distribuído pela equipe", "/education/qfl1605/avaliacoes"],
+  ["clipboard", "Avaliações", "Metodologia, públicos e privacidade", "#avaliacoes"],
   ["location", "Locais de coleta", "Mapas e pontos de amostragem", "#locais"],
   ["chart", "Resultados e relatórios", "Gráficos, comparações e publicações", "#recursos"],
 ] as const;
@@ -146,7 +146,7 @@ export default function QFL1605Page() {
           <a href="#parceiros">Parceiros</a>
         </nav>
         <div className="qfl-top-actions">
-          <a className="qfl-teacher" href="/education/qfl1605/acesso">Área de trabalho ↗</a>
+          <a className="qfl-teacher" href="/education/qfl1605/prototipo/admin">Administração ↗</a>
           <Link className="qfl-back" href="/">Voltar ao site</Link>
         </div>
       </header>
@@ -314,7 +314,8 @@ export default function QFL1605Page() {
         <div className="qfl-section-heading">
           <h2>Escutar para<br/>aprimorar.</h2>
           <div className="qfl-evaluation-intro">
-            <p>Há formulários específicos para cada público. Os formulários de alunos, estudantes de escolas, guias e monitores estão em português. Somente o formulário para turistas e visitantes é bilíngue.</p>
+            <p>Há formulários específicos para cada público. Cada participante envia somente uma avaliação e marca todos os locais visitados e todas as atividades realizadas. Observações sobre uma experiência particular devem identificar o local e a atividade.</p>
+            <p>Os formulários de alunos, estudantes de escolas, guias e monitores estão em português. Somente o formulário para turistas e visitantes é bilíngue.</p>
             <p>A identificação é opcional. As respostas serão analisadas de forma agregada e comentários só poderão aparecer publicamente após revisão.</p>
           </div>
         </div>
@@ -327,7 +328,7 @@ export default function QFL1605Page() {
                 <small>{audience.language}</small>
                 <p>{audience.text}</p>
               </div>
-              <a href="/education/qfl1605/avaliacoes">Acessar com código →</a>
+              <span className="qfl-evaluation-distribution">Distribuição pela equipe e por QR code</span>
             </article>
           ))}
         </div>
@@ -337,13 +338,18 @@ export default function QFL1605Page() {
         </div>
       </section>
 
+      <section className="qfl-section qfl-governance" id="resultados">
+        <div><p className="qfl-kicker">07 / Resultados aprovados</p><h2>Do dado privado ao conhecimento público.</h2></div>
+        <div><p>Esta área receberá somente indicadores agregados, gráficos e resultados revisados pelos docentes. Respostas individuais, nomes, comentários não moderados e dados científicos em análise permanecerão na área administrativa.</p><p>A disciplina ainda não começou. Por isso, nenhum resultado demonstrativo será apresentado como dado real.</p></div>
+      </section>
+
       <section className="qfl-section qfl-governance" id="publicacao">
-        <div><p className="qfl-kicker">07 / Publicação responsável</p><h2>Aprender também é cuidar dos dados.</h2></div>
+        <div><p className="qfl-kicker">08 / Publicação responsável</p><h2>Aprender também é cuidar dos dados.</h2></div>
         <div><p>Registros de campo, avaliações, comentários e trabalhos de estudantes não serão publicados automaticamente. Todo material passará por revisão acadêmica e autorização antes de aparecer nesta área.</p><p>Comentários críticos legítimos poderão contribuir para o aprimoramento da disciplina. Conteúdo ofensivo ou dados pessoais permanecerão fora da área pública.</p></div>
       </section>
 
       <section className="qfl-section qfl-partners" id="parceiros">
-        <p className="qfl-kicker">08 / Parceiros e colaboradores</p>
+        <p className="qfl-kicker">09 / Parceiros e colaboradores</p>
         <div className="qfl-section-heading">
           <h2>Conhecimento construído<br/>em colaboração.</h2>
           <p>Instituições e empresas que apoiam as atividades acadêmicas, científicas e de campo da QFL1605.</p>

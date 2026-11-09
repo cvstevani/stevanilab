@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 
-type Scope = "workspace" | "evaluations";
+type Scope = "workspace" | "evaluations" | "admin";
 type Resource = { title: string; url: string };
 
 export function AccessPortal({ scope }: { scope: Scope }) {
@@ -53,14 +53,17 @@ export function AccessPortal({ scope }: { scope: Scope }) {
   }
 
   const isWorkspace = scope === "workspace";
+  const isAdmin = scope === "admin";
 
   return (
     <main className="qfl-access-page">
       <a className="qfl-access-back" href="/education/qfl1605">← Voltar à página da disciplina</a>
       <section className="qfl-access-card">
         <p className="qfl-kicker">Acesso restrito</p>
-        <h1>{isWorkspace ? "Área de trabalho" : "Questionários de avaliação"}</h1>
-        <p>{isWorkspace
+        <h1>{isAdmin ? "Administração da QFL1605" : isWorkspace ? "Área de trabalho" : "Questionários de avaliação"}</h1>
+        <p>{isAdmin
+          ? "Acesso temporário reservado aos docentes. A versão definitiva usará autenticação individual e lista de contas autorizadas."
+          : isWorkspace
           ? "Conteúdo exclusivo para alunos matriculados na QFL1605 e professores da disciplina."
           : "Acesso reservado aos participantes presentes nas atividades da disciplina ou do PETAR. Use o código fornecido pela equipe responsável."
         }</p>

@@ -16,6 +16,7 @@ test("preserves the implemented QFL1605 modules", async () => {
     "locais",
     "recursos",
     "avaliacoes",
+    "resultados",
     "publicacao",
     "parceiros",
   ]) {
@@ -32,17 +33,17 @@ test("preserves the implemented QFL1605 modules", async () => {
   assert.match(page, /partners\.map/);
 });
 
-test("connects each audience to its specific evaluation form", async () => {
+test("describes every evaluation audience without exposing forms", async () => {
   const page = await readFile(pageUrl, "utf8");
 
   assert.doesNotMatch(page, /docs\.google\.com\/forms/);
-  assert.match(page, /\/education\/qfl1605\/avaliacoes/);
+  assert.doesNotMatch(page, /\/education\/qfl1605\/avaliacoes/);
   assert.match(page, /Alunos da QFL1605/);
   assert.match(page, /Guias e monitores do PETAR/);
   assert.match(page, /Estudantes de escolas/);
   assert.match(page, /Turistas e visitantes/);
   assert.match(page, /Somente o formulário para turistas e visitantes é bilíngue/);
-  assert.match(page, /Acessar com código/);
+  assert.match(page, /Distribuição pela equipe e por QR code/);
   assert.match(page, /A identificação é opcional/);
   assert.match(page, /planilha privada/);
 });
@@ -56,6 +57,7 @@ test("keeps protected QFL1605 destinations out of the public page", async () => 
   assert.doesNotMatch(page, /docs\.google\.com\/forms|drive\.google\.com\/drive\/folders/);
   assert.match(accessRoute, /QFL1605_WORKSPACE_CODE/);
   assert.match(accessRoute, /QFL1605_EVALUATION_CODE/);
+  assert.match(accessRoute, /QFL1605_ADMIN_CODE/);
   assert.match(accessRoute, /HttpOnly; SameSite=Strict/);
 });
 
