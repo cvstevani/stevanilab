@@ -1,8 +1,5 @@
-import type { Metadata } from "next";
-import { AccessPortal } from "../access-portal";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata: Metadata = { title: "Avaliações QFL1605 e PETAR | StevaniLab", robots: { index: false, follow: false } };
-
-export default function QFL1605EvaluationAccess() {
-  return <AccessPortal scope="evaluations" />;
+export default function QFL1605EvaluationsRedirect() {
+  permanentRedirect("https://ambiental.iq.usp.br/education/qfl1605/avaliacoes");
 }

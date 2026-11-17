@@ -1,12 +1,5 @@
-import { QFL1605Prototype } from "./prototype-app";
-import "./prototype.css";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = {
-  title: "Protótipo QFL1605 · Química Ambiental em Campo",
-  description: "Protótipo instalável para registro de amostras, cálculos e avaliações em campo.",
-  manifest: "/qfl1605-prototype.webmanifest",
-};
-
-export default function QFL1605PrototypePage() {
-  return <QFL1605Prototype />;
+export default function QFL1605PrototypeRedirect() {
+  permanentRedirect("https://ambiental.iq.usp.br/education/qfl1605/prototipo");
 }

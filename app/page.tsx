@@ -283,7 +283,6 @@ export default function Home() {
           <nav aria-label={lang === "en" ? "Section navigation" : "Navegação por seções"}>
             {nav.map((item) => <a key={item.id} href={`#${item.id}`} onClick={() => setMenuOpen(false)}>{item[lang]}</a>)}
           </nav>
-          <a className="education-link" href="/education/qfl1605" onClick={() => setMenuOpen(false)}>{lang === "en" ? "Education" : "Educação"}</a>
         </div>
         <button
           className="menu-toggle"

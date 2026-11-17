@@ -1,8 +1,5 @@
-import type { Metadata } from "next";
-import { AccessPortal } from "../access-portal";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata: Metadata = { title: "Área restrita QFL1605 | StevaniLab", robots: { index: false, follow: false } };
-
-export default function QFL1605WorkspaceAccess() {
-  return <AccessPortal scope="workspace" />;
+export default function QFL1605WorkspaceRedirect() {
+  permanentRedirect("https://ambiental.iq.usp.br/education/qfl1605/acesso");
 }
